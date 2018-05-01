@@ -13,7 +13,7 @@ Video demo for tool is published here: [URL](http://youtube.com)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
 ## Architecture
-![Deja Vu Architecture](https://github.com/bhdresh/Dejavu/blob/master/DejaVu%20Arch.png)
+![Deja Vu Architecture](https://github.com/bhdresh/Dejavu/blob/master/DejaVu_Architecture.png)
  - **Host OS:** Primary OS hosting the DejaVU virtual box. Note: Primary   
    host can be OS independent Windows/Linux and can be based on      
    corporate hardening guidelines.
