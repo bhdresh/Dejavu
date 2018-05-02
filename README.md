@@ -6,10 +6,10 @@ With this in mind, we have developed DejaVu which is an open source deception fr
 
 Alerts only occur when an adversary is engaged with the decoy, so now when the attacker touches the decoy during reconnaissance or performs authentication attempts this raises a high accuracy alert which should be investigated by the defense. Decoys can also be placed on the client VLAN’s to detect client side attacks such as responder/LLMNR attacks using client side decoys. Additionally, common attacks which the adversary uses to compromise such as abusing Tomcat/SQL server for initial foothold can be deployed as decoys, luring the attacker and enabling detection.
 
-Video demo for tool is published here: [Download URL](https://drive.google.com/open?id=1q-8nuvPgkuUz7Lyh5ddTWZsTxXMGaH4G)
+Video demo for tool is published here: [Download URL](https://www.youtube.com/channel/UCXN2ueUF_gaahy1FW_OtKaw)
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V1](http://google.drive.com)
+- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1q-8nuvPgkuUz7Lyh5ddTWZsTxXMGaH4G)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
 ## Architecture
