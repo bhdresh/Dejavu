@@ -38,9 +38,9 @@ php config.php --username=<provide username> --password=<provide password> --ema
 4. Set SNMP configuration on "mailalert.php" to recieve Email alerts
 
 **Add Server Decoy**
-
+TBA
 **Add Client Decoy**
-
+TBA
 
 
 ## Checksums
