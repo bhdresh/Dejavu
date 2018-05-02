@@ -52,6 +52,10 @@ php config.php --username=<provide username> --password=<provide password> --ema
 - [ ] ISO image   
 - [ ] Detailed Installation/Configuration Steps
 
+## Authors
+Bhadresh Patel (@bhdresh)
+Harish Ramadoss (@hramados)
+
 ## Credits
 
  - AdminLTE for their awesome UI theme
