@@ -8,10 +8,6 @@ Alerts only occur when an adversary is engaged with the decoy, so now when the a
 
 Video demo for tool is published here: [Youtube URL](https://www.youtube.com/channel/UCXN2ueUF_gaahy1FW_OtKaw)
 
-## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1q-8nuvPgkuUz7Lyh5ddTWZsTxXMGaH4G)
-- This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
-
 ## Architecture
 ![Deja Vu Architecture](https://github.com/bhdresh/Dejavu/blob/master/DejaVu_Architecture.png)
  - **Host OS:** Primary OS hosting the DejaVU virtual box. Note: Primary   
@@ -25,6 +21,10 @@ Video demo for tool is published here: [Youtube URL](https://www.youtube.com/cha
 - **Server Dockers –** Docker based service containers – HTTP(Tomcat/Apache), SQL, SMB, FTP, SSH
 - **Client Dockers –** Docker based client container – NBNS client
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
+
+## Virtual Box Download Link
+- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1q-8nuvPgkuUz7Lyh5ddTWZsTxXMGaH4G)
+- This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
 ## Usage Guide
 
