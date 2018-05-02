@@ -6,7 +6,7 @@ With this in mind, we have developed DejaVu which is an open source deception fr
 
 Alerts only occur when an adversary is engaged with the decoy, so now when the attacker touches the decoy during reconnaissance or performs authentication attempts this raises a high accuracy alert which should be investigated by the defense. Decoys can also be placed on the client VLAN’s to detect client side attacks such as responder/LLMNR attacks using client side decoys. Additionally, common attacks which the adversary uses to compromise such as abusing Tomcat/SQL server for initial foothold can be deployed as decoys, luring the attacker and enabling detection.
 
-Video demo for tool is published here: [URL](http://youtube.com)
+Video demo for tool is published here: [Download URL](https://drive.google.com/open?id=1q-8nuvPgkuUz7Lyh5ddTWZsTxXMGaH4G)
 
 ## Virtual Box Download Link
 - Framework/Tool is published here: [Beta V1](http://google.drive.com)
@@ -26,8 +26,9 @@ Video demo for tool is published here: [URL](http://youtube.com)
 - **Client Dockers –** Docker based client container – NBNS client
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
 
-## Setup Guide
+## Usage Guide
 
+**Initial Setup**
  1. Configure Username/Password for admin panel
 ```
 php config.php --username=<provide username> --password=<provide password> --email=<provide email>
@@ -36,12 +37,17 @@ php config.php --username=<provide username> --password=<provide password> --ema
 3. Set Virtualbox network adapter type should be "PCNet"(full name is something like PCnet-FAST III)
 4. Set SNMP configuration on "mailalert.php" to recieve Email alerts
 
+**Add Server Decoy**
+
+**Add Client Decoy**
+
+
+
 ## Checksums
 
 **Beta V1**
 
- - MD5 - 
- - Sha1 - 
+ - MD5 - 174961aff2fb68b081ba93a2b39dcdd0
 
 ## Sneak Peak
 
@@ -59,6 +65,4 @@ Harish Ramadoss (@hramados)
 ## Credits
 
  - AdminLTE for their awesome UI theme
- - Docker 
  - Big shout to open source community for previous work on Honeypots/Deception stuff
-
