@@ -23,7 +23,7 @@ Video demo for tool is published here: [Youtube URL](https://www.youtube.com/cha
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1q-8nuvPgkuUz7Lyh5ddTWZsTxXMGaH4G)
+- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1Fkw7rXWZa7cgdvbejqIxS0bN_nVMTe6z)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
 ## Usage Guide
