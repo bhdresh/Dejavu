@@ -49,11 +49,12 @@ TBA
 
 **Beta V1**
 
- - MD5 - 174961aff2fb68b081ba93a2b39dcdd0
+ - MD5 : 174961aff2fb68b081ba93a2b39dcdd0
 
 ## Sneak Peak
 
-TBA
+<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%"> <img src="https://github.com/bhdresh/Dejavu/blob/master/addServerDecoy.png" width="35%"> <img src="https://github.com/bhdresh/Dejavu/blob/master/alertDashboard.png" width="35%">
+<img src="https://github.com/bhdresh/Dejavu/blob/master/modiyAlert.png" width="35%">
 
 ## To Do
 - [ ] Code Cleanup and sanitization
