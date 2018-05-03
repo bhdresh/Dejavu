@@ -53,8 +53,8 @@ TBA
 
 ## Sneak Peak
 
-<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%" height="300px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/addServerDecoy.png" width="35%" height="300px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/alertDashboard.png" width="35%" height="300px">
-<img src="https://github.com/bhdresh/Dejavu/blob/master/modiyAlert.png" width="35%" height="300px">
+<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%" height="200px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/addServerDecoy.png" width="35%" height="200px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/alertDashboard.png" width="35%" height="200px">
+<img src="https://github.com/bhdresh/Dejavu/blob/master/modiyAlert.png" width="35%" height="200px">
 
 ## To Do
 - [ ] Code Cleanup and sanitization
