@@ -72,14 +72,14 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 1.   To add Client Decoy
 	- Select Decoy Management ->Add Client Decoy
 	-   Provide the details for new decoy as shown below. It’s recommended to place the client decoy on user VLANs to detect responder/LLMNR attacks.
-<img src="https://github.com/bhdresh/Dejavu/blob/master/addClientDecoy.png" width="35%" height="200px"> 
+<img src="https://github.com/bhdresh/Dejavu/blob/master/addClientDecoy.png" width="70%" height="200px"> 
 
 2.   Let’s run responder from attacker machine on end user VLAN and analyze the alerts
-<img src="https://github.com/bhdresh/Dejavu/blob/master/responderExample.png" width="35%" height="200px"> 
+<img src="https://github.com/bhdresh/Dejavu/blob/master/responderExample.png" width="70%" height="200px"> 
 
 3. View the alerts triggered when the attacker scanned our decoy and tried to authenticated.
 	-   Log management -> List Events
-<img src="https://github.com/bhdresh/Dejavu/blob/master/alertsDashboard2.png" width="35%" height="200px"> 
+<img src="https://github.com/bhdresh/Dejavu/blob/master/alertsDashboard2.png" width="70%" height="200px"> 
 
 ## To Do
 - [ ] Code Cleanup and sanitization
