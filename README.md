@@ -3,6 +3,12 @@
 - Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1P0DZprkG26tw9mYq6zQC26iych_VvuTo)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
+## Checksums
+
+**Beta V1**
+
+ - MD5 : c45afbce843e2a74109d94ee1120bb6a
+
 # DejaVU - Open Source Deception Framework
 
 Deception techniques if deployed well can be very effective for organizations to improve network defense and can be a useful arsenal for blue teams to detect attacks at very early stage of cyber kill chain. But the challenge we have seen is deploying, managing and administering decoys across large networks is still not easy and becomes complex for defenders to manage this over time. Although there are a lot of commercial tools in this space, we haven’t come across open source tools which can achieve this.
@@ -45,12 +51,6 @@ TBA
 **Add Client Decoy**
 
 TBA
-
-## Checksums
-
-**Beta V1**
-
- - MD5 : 174961aff2fb68b081ba93a2b39dcdd0
 
 ## Sneak Peak
 
