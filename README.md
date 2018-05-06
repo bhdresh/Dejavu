@@ -1,3 +1,8 @@
+
+## Virtual Box Download Link
+- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1P0DZprkG26tw9mYq6zQC26iych_VvuTo)
+- This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
+
 # DejaVU - Open Source Deception Framework
 
 Deception techniques if deployed well can be very effective for organizations to improve network defense and can be a useful arsenal for blue teams to detect attacks at very early stage of cyber kill chain. But the challenge we have seen is deploying, managing and administering decoys across large networks is still not easy and becomes complex for defenders to manage this over time. Although there are a lot of commercial tools in this space, we haven’t come across open source tools which can achieve this.
@@ -21,10 +26,6 @@ Video demo for tool is published here: [Youtube URL](https://www.youtube.com/cha
 - **Server Dockers –** Docker based service containers – HTTP(Tomcat/Apache), SQL, SMB, FTP, SSH
 - **Client Dockers –** Docker based client container – NBNS client
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
-
-## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1Fkw7rXWZa7cgdvbejqIxS0bN_nVMTe6z)
-- This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
 ## Usage Guide
 
