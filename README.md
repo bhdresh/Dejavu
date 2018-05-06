@@ -69,8 +69,6 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 
 **Add Client Decoy**
 
-### Add Client Decoy
-
 1.   To add Client Decoy
 	- Select Decoy Management ->Add Client Decoy
 	-   Provide the details for new decoy as shown below. It’s recommended to place the client decoy on user VLANs to detect responder/LLMNR attacks.
@@ -83,11 +81,6 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 	-   Log management -> List Events
 <img src="https://github.com/bhdresh/Dejavu/blob/master/alertsDashboard2.png" width="35%" height="200px"> 
 
-## Sneak Peak
-
-<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%" height="200px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/addServerDecoy.png" width="35%" height="200px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/alertDashboard.png" width="35%" height="200px">
-<img src="https://github.com/bhdresh/Dejavu/blob/master/modiyAlert.png" width="35%" height="200px">
-
 ## To Do
 - [ ] Code Cleanup and sanitization
 - [ ] Persistance on reboot
@@ -97,6 +90,7 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 
 ## Authors
 Bhadresh Patel (@bhdresh)
+
 Harish Ramadoss (@hramados)
 
 ## Credits
