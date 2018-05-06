@@ -91,7 +91,7 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 - [ ] Persistance on reboot
 - [ ] Add client side decoys generating HTTP, FTP traffic
 - [ ] ISO image   
-- [ ] Detailed Installation/Configuration Steps
+- [ ] Wiki
 
 ## Authors
 Bhadresh Patel (@bhdresh)
