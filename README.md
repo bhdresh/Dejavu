@@ -44,6 +44,10 @@ php config.php --username=<provide username> --password=<provide password> --ema
 3. Virtualbox network adapter type should be "PCNet"(full name is something like PCnet-FAST III)
 4. Set SNMP configuration on "mailalert.php" to recieve Email alerts
 
+Now when you go to the default URL, you are greeted by the logon prompt:
+
+<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%" height="200px"> 
+
 **Add Server Decoy**
 
 TBA
