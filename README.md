@@ -81,6 +81,11 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 	 -   Log management -> List Events
 <img src="https://github.com/bhdresh/Dejavu/blob/master/alertsDashboard2.png" width="70%" height="200px"> 
 
+**Filter Alerts**
+
+1.    Alerts can be configured based on various parameters.  Example – Don’t send alerts from IP – 10.1.10.101. If certain IP’s like in-house vulnerability scanner, SCCM etc. needs to be whitelisted. 
+<img src="https://github.com/bhdresh/Dejavu/blob/master/alertManage.png" width="50%" height="300px"> 
+
 ## To Do
 - [ ] Code Cleanup and sanitization
 - [ ] Persistance on reboot
