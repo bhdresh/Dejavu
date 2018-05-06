@@ -50,7 +50,19 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 
 **Add Server Decoy**
 
-TBA
+1.   To add a decoy, we first need to add a VLAN on which we want to later deploy Decoys.
+	 -  Select Decoy Management -> Add VLAN
+	 -   Enter the VLAN ID. Use the “List Available VLANs” option to list the VLANs tagged on the interface.
+<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%" height="200px"> 
+2.   To add server decoy :
+		-   Select Decoy Management ->Add Server Decoy
+		-   Provide the details for new decoy as shown below. Select the services (SMB/FTP/MySQL/FTP/Web Server/SSH) to be deployed, use dynamic or provide a static IP address.
+<img src="https://github.com/bhdresh/Dejavu/blob/master/addServerDecoy.png" width="35%" height="200px"> 
+3.   Let’s do some port scan's + Auth attempts from attacker machine on server VLAN and analyze the alerts
+<img src="https://github.com/bhdresh/Dejavu/blob/master/attackServer.png" width="35%" height="200px"> 
+4.   View the alerts triggered when the attacker scanned our decoy and tried to authenticated.
+		-  Select Log Management -> List Events
+<img src="https://github.com/bhdresh/Dejavu/blob/master/alertsDashboard.png" width="35%" height="200px"> 
 
 **Add Client Decoy**
 
