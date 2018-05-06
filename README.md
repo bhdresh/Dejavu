@@ -63,7 +63,7 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 3.   Let’s do some port scan's + Auth attempts from attacker machine on server VLAN and analyze the alerts
 <img src="https://github.com/bhdresh/Dejavu/blob/master/attackServer.png" width="50%" height="200px"> 
 
-4.   View the alerts triggered when the attacker scanned our decoy and tried to authenticated.
+4.   View the alerts triggered when the attacker scanned our decoy and tried to authenticate.
 	 -  Select Log Management -> List Events
 <img src="https://github.com/bhdresh/Dejavu/blob/master/alertsDashboard.png" width="70%" height="200px"> 
 
