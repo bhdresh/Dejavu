@@ -1,13 +1,13 @@
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V1](https://drive.google.com/open?id=1P0DZprkG26tw9mYq6zQC26iych_VvuTo)
+- Framework/Tool is published here: [Beta V2](https://drive.google.com/open?id=1K5uh76z4KZyIXsYKRqvT1QGNyZq6C5zQ)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 
 ## Checksums
 
 **Beta V1**
 
- - MD5 : c45afbce843e2a74109d94ee1120bb6a
+ - MD5 : b79e22a6dfc8b50a2bd69b560b69bda3
 
 # DejaVU - Open Source Deception Framework
 
@@ -88,7 +88,7 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 
 ## To Do
 - [ ] Code Cleanup and sanitization
-- [ ] Persistance on reboot
+- [x] Persistance on reboot
 - [ ] Add client side decoys generating HTTP, FTP traffic
 - [ ] ISO image   
 - [ ] Wiki
