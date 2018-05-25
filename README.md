@@ -42,7 +42,7 @@ php config.php --username=<provide username> --password=<provide password> --ema
 ```
 2. Default URL to access admin panel - http://192.168.56.102
 3. Virtualbox network adapter type should be "PCNet"(full name is something like PCnet-FAST III)
-4. Set SNMP configuration on "mailalert.php" to recieve Email alerts
+4. Set SMTP configuration on "mailalert.php" to recieve Email alerts
 
 Now when you go to the default URL, you are greeted by the logon prompt:
 
