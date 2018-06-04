@@ -5,7 +5,7 @@
 
 ## Checksums
 
-**Beta V1**
+**Beta V3**
 
  - MD5 : 6877a3a978c69711cdfa22f7085f9d8a
 
