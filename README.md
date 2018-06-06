@@ -2,7 +2,7 @@
 ## Virtual Box Download Link
 - Framework/Tool is published here: [Beta V3](https://drive.google.com/open?id=1lhZu708zbRmRY7YYpA81Tu23QizFiY6G)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
-- Quick setup guide video - https://youtu.be/NOuEGa0241U
+- Quick setup video guide - https://youtu.be/NOuEGa0241U
 
 ## Checksums
 
