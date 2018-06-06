@@ -2,6 +2,7 @@
 ## Virtual Box Download Link
 - Framework/Tool is published here: [Beta V3](https://drive.google.com/open?id=1lhZu708zbRmRY7YYpA81Tu23QizFiY6G)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
+- Quick setup guide video - https://youtu.be/NOuEGa0241U
 
 ## Checksums
 
@@ -87,7 +88,7 @@ Now when you go to the default URL, you are greeted by the logon prompt:
 <img src="https://github.com/bhdresh/Dejavu/blob/master/alertManage.png" width="50%" height="300px"> 
 
 ## To Do
-- [x] Setup Wizard
+- [x] Initial Setup Wizard
 - [ ] Code Cleanup and sanitization
 - [x] Persistance on reboot
 - [ ] Add client side decoys generating HTTP, FTP traffic
