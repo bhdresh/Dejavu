@@ -1,6 +1,6 @@
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V3](https://drive.google.com/open?id=1lhZu708zbRmRY7YYpA81Tu23QizFiY6G)
+- Framework/Tool is published here: [Beta V3](https://drive.google.com/open?id=10gnQ1rEr9EX4j9lh_VcKSjcQIioUaVqu)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
@@ -37,17 +37,9 @@ Video demo for tool is published here: [Youtube URL](https://www.youtube.com/cha
 ## Usage Guide
 
 **Initial Setup**
- 1. Configure Username/Password for admin panel
-```
-php config.php --username=<provide username> --password=<provide password> --email=<provide email>
-```
-2. Default URL to access admin panel - http://192.168.56.102
-3. Virtualbox network adapter type should be "PCNet"(full name is something like PCnet-FAST III)
-4. Set SMTP configuration on "mailalert.php" to recieve Email alerts
 
-Now when you go to the default URL, you are greeted by the logon prompt:
-
-<img src="https://github.com/bhdresh/Dejavu/blob/master/login.png" width="35%" height="200px"> 
+- Quick setup video guide - https://youtu.be/NOuEGa0241U
+- Command-line interface credentials - administrator:changepassword
 
 **Add Server Decoy**
 
