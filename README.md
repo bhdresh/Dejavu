@@ -4,7 +4,7 @@
 - This is a Beta Release and is being shared for testing and suggestions purpose only. All feedback is welcome.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
-## Checksums
+## Checksum
 
 **Beta V4**
 
