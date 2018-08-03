@@ -30,6 +30,9 @@ Alerts only occur when an adversary is engaged with the decoy, so now when the a
 - **Client Dockers –** Docker based client container – NBNS client
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
 
+## Sneak Peak
+
+<img src="https://github.com/bhdresh/Dejavu/blob/master/1.png" width="35%"> <img src="https://github.com/bhdresh/Dejavu/blob/master/2.png" width="35%"> <img src="https://github.com/bhdresh/Dejavu/blob/master/3.png" width="35%"> <img src="https://github.com/bhdresh/Dejavu/blob/master/4.png" width="35%">
 ## To Do
 - [x] Initial Setup Wizard
 - [x] Upload custom file structure/pages for web (Apache) decoys
