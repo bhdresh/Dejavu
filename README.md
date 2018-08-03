@@ -32,7 +32,7 @@ DejaVu will be presented at [Blackhat Arsenal](https://www.blackhat.com/us-18/ar
 - **Client Dockers –** Docker based client container – NBNS client
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
 
-## Sneak Peak
+## Sneak Peek
 
 <img src="https://github.com/bhdresh/Dejavu/blob/master/1.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/2.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/3.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/4.png" width="45%" height="250 px">
 
@@ -41,6 +41,7 @@ DejaVu will be presented at [Blackhat Arsenal](https://www.blackhat.com/us-18/ar
 - [x] Upload custom file structure/pages for web (Apache) decoys
 - [x] Persistance on reboot
 - [x] Backup/Restore configuration
+- [x] Custom Filters to exclude inhouse scanners/asset discovery tool
 - [ ] Code Cleanup and sanitization
 - [ ] Add client side decoys generating HTTP, FTP traffic
 - [ ] ISO image   
