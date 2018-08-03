@@ -19,7 +19,7 @@ Alerts only occur when an adversary is engaged with the decoy, so now when the a
 DejaVu will be presented at [Blackhat Arsenal](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework) and [Defcon Demo Labs](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU)
 
 ## Architecture
-![Deja Vu Architecture](https://github.com/bhdresh/Dejavu/blob/master/DejaVu_Architecture.png)
+![Deja Vu Architecture](https://github.com/bhdresh/Dejavu/blob/master/images/DejaVu_Architecture.png)
  - **Host OS:** Primary OS hosting the DejaVU virtual box. Note: Primary   
    host can be OS independent Windows/Linux and can be based on      
    corporate hardening guidelines.
