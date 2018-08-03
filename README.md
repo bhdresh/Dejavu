@@ -32,7 +32,7 @@ Alerts only occur when an adversary is engaged with the decoy, so now when the a
 
 ## Sneak Peak
 
-<img src="https://github.com/bhdresh/Dejavu/blob/master/1.png" width="35%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/2.png" width="35%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/3.png" width="35%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/4.png" width="35%" height="250 px">
+<img src="https://github.com/bhdresh/Dejavu/blob/master/1.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/2.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/3.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/4.png" width="45%" height="250 px">
 
 ## To Do
 - [x] Initial Setup Wizard
