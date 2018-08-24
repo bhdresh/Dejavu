@@ -37,6 +37,24 @@ DejaVu will be presented at [Blackhat Arsenal](https://www.blackhat.com/us-18/ar
 - **Client Dockers –** Docker based client container – NBNS client
 - **Management Console (Web + DB) –** A centralized console to deploy, administer and configure all the decoys effectively along with logging and alerting dashboard to display detailed information about the alerts generated.
 
+
+## Source Files
+
+Source files/Scripts are on the following path
+
+```
+├── .
+├── var                   
+│   ├── www/html/Decoify   # Core DejaVu Files
+│       ├── log.sh         # Main Log monitoring 
+│   ├── dejavufiles        # For backup/restore and custom file structure
+│   ├── log/data           # To process graph data & Breadcrumb files
+├── etc 
+│   ├── rc.local	   # Bootup Script
+│   ├── startup.sh         # Startup script
+│   └── mainlog.sh         # Log Monitoring script for TCP/UDP/ICMP
+```
+
 ## Sneak Peek
 
 <img src="https://github.com/bhdresh/Dejavu/blob/master/images/1.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/images/2.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/images/3.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/Dejavu/blob/master/images/4.png" width="45%" height="250 px">
