@@ -1,6 +1,6 @@
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V7](https://drive.google.com/open?id=1ibl-A6hRN85Y7PkVTJx_7Z70T3TZCOUu)
+- Framework/Tool is published here: [Beta V7](https://drive.google.com/open?id=1EQaFW1xy0IWJ9OXyXQQ-GuV9hxhLzI3q)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. Kindly feel free to reach us on bhdresh@gmail.com or naiduharish.r@gmail.com if you have any suggestions/feedback/update.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
@@ -8,7 +8,7 @@
 
 **Beta V7**
 
-  - MD5 : e219ee24dbfdb48d701f8d5ea997e1b0
+  - MD5 : 19cf3cc1961dde1b7cc786ecb4585117
  
  ## Changelog
  
