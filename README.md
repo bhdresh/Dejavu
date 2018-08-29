@@ -1,19 +1,26 @@
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V6](https://drive.google.com/open?id=1l5vkQ3_2MpNJ6f_WxUyz0xqM3m7SwjGc)
+- Framework/Tool is published here: [Beta V7](https://drive.google.com/open?id=1ibl-A6hRN85Y7PkVTJx_7Z70T3TZCOUu)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. Kindly feel free to reach us on bhdresh@gmail.com or naiduharish.r@gmail.com if you have any suggestions/feedback/update.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
 ## Checksum
 
-**Beta V6**
+**Beta V7**
 
- - MD5 : 5b0b14534cb7c2ba45123558fe206143
+  - MD5 : e219ee24dbfdb48d701f8d5ea997e1b0
  
- ## Release note
- - Introduced SNMP, MODBUS and S7COMM server decoys
- - Custom file structure upload for SMB decoys
+ ## Changelog
+ 
+ - New functionality
+ 	- Generate digital breadcrumbs.
+	- FW upgrade feature to avoid downloading whole image for each new release.
+ - Enhancements
+ 	- Enabled HTTPS for Web/Management UI.
+ 	- Updated apache docker to serve both HTTP and HTTPS connections.
+ 	- Enhanced log graph to reflect total event count on mouseover to attacker icon.
  - Bug fixes
+
 
 # DejaVU - Open Source Deception Framework
 
