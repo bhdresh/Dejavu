@@ -28,7 +28,7 @@ DejaVu is an open source deception framework which can be used to deploy decoys 
 
 Alerts only occur when an adversary is engaged with the decoy, so now when the attacker touches the decoy during reconnaissance or performs authentication attempts this raises a high accuracy alert which should be investigated by the defense. Decoys can also be placed on the client VLAN’s to detect client side attacks such as responder/LLMNR attacks using client side decoys. Additionally, common attacks which the adversary uses to compromise such as abusing Tomcat/SQL server for initial foothold can be deployed as decoys, luring the attacker and enabling detection.
 
-DejaVu will be presented at [Blackhat Arsenal](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework) and [Defcon Demo Labs](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU)
+DejaVu has been presented at [Blackhat Arsenal](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework) and [Defcon Demo Labs](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU)
 
 ## Architecture
 ![Deja Vu Architecture](https://github.com/bhdresh/Dejavu/blob/master/images/DejaVu_Architecture.png)
