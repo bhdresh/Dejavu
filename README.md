@@ -18,6 +18,10 @@
 	
  - Bug fixes
 
+[![Build Status](https://img.shields.io/github/forks/bhdresh/Dejavu.svg)](https://github.com/bhdresh/Dejavu)
+[![Build Status](https://img.shields.io/github/stars/bhdresh/Dejavu.svg)](https://github.com/bhdresh/Dejavu)
+[![License](https://img.shields.io/github/license/bhdresh/Dejavu.svg)](https://github.com/bhdresh/Dejavu)
+[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/tools.html#DejaVU)
 
 # DejaVU - Open Source Deception Framework
 
