@@ -1,20 +1,21 @@
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V8](http://bit.ly/2QGtipF)
+- Framework/Tool is published here: [Beta V9](http://bit.ly/2OC6KTF)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. Kindly feel free to reach us on bhdresh@gmail.com or naiduharish.r@gmail.com if you have any suggestions/feedback/update.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
 ## Checksum
 
-**Beta V8**
+**Beta V9**
 
-  - MD5 : 0eb7e623d7c9644986a708bf1776fcdc
+  - MD5 : 05bb3a59b1f5a8e111c4a1d3cc42dd71
  
  ## Changelog
- 
  - New functionality
- 	- Syslog server configuration (Settings >> Update Syslog Details)
-	- Introduced event management to manage generated threat events (Log Management >> List events) 
+ 	- Syslog aggregator service for centralised logging and monitoring (Settings >> Update Syslog Details >> Enable log aggregation service)
+	- SSH decoy to log attempted username and password
+	- Customize TTL and MAC address of decoys
+	
 	
  - Bug fixes
 
@@ -69,6 +70,14 @@ Source files/Scripts are on the following path
 - [x] Persistance on reboot
 - [x] Backup/Restore configuration
 - [x] Custom Filters to exclude inhouse scanners/asset discovery tool
+- [x] Implement syslog
+- [x] Event management to manage generated threat events
+- [x] Digital breadcrumbs
+- [x] HTTPS for Web/Management UI
+- [x] Apache docker to serve both HTTP and HTTPS connections
+- [x] SNMP, MODBUS and S7COMM server decoys
+- [x] Syslog aggregator service for centralised logging and monitoring 
+- [x] Customize TTL and MAC address of decoys
 - [ ] Code Cleanup and sanitization
 - [ ] Add client side decoys generating HTTP, FTP traffic
 - [ ] ISO image   
