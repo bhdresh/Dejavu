@@ -6,7 +6,7 @@
 
 ## Checksum
 
-**Beta V7**
+**Beta V8**
 
   - MD5 : 0eb7e623d7c9644986a708bf1776fcdc
  
