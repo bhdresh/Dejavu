@@ -1,6 +1,6 @@
 
 ## Virtual Box Download Link
-- Framework/Tool is published here: [Beta V9](http://bit.ly/2OC6KTF)
+- Framework/Tool is published here: [Beta V9](http://bit.ly/2IyHxaI)
 - This is a Beta Release and is being shared for testing and suggestions purpose only. Kindly feel free to reach us on bhdresh@gmail.com or naiduharish.r@gmail.com if you have any suggestions/feedback/update.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
