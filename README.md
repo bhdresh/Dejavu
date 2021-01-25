@@ -4,10 +4,6 @@
 - This is a Beta Release and is being shared for testing and suggestions purpose only. Kindly feel free to reach us on bhdresh@gmail.com or naiduharish.r@gmail.com if you have any suggestions/feedback/update.
 - Quick setup video guide - https://youtu.be/NOuEGa0241U
 
-## Checksum
-
-**Beta V9**
-
  ## Changelog
  - New functionality
  	- Syslog aggregator service for centralised logging and monitoring (Settings >> Update Syslog Details >> Enable log aggregation service)
