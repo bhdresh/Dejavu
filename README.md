@@ -8,8 +8,6 @@
 
 **Beta V9**
 
-  - MD5 : 05bb3a59b1f5a8e111c4a1d3cc42dd71
- 
  ## Changelog
  - New functionality
  	- Syslog aggregator service for centralised logging and monitoring (Settings >> Update Syslog Details >> Enable log aggregation service)
