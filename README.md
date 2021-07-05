@@ -53,7 +53,7 @@ Below are few examples attack vectors using DejaVu platform you can detect:
 
 # Architecture
 
-[![Architecture](https://github.com/bhdresh/dejavu-engine/blob/harish/architecture.png "Architecture")](https://github.com/bhdresh/dejavu-engine/blob/harish/architecture.png "Architecture")
+[![Architecture](https://github.com/bhdresh/dejavu/blob/architecture.png "Architecture")](https://github.com/bhdresh/dejavu/blob/architecture.png "Architecture")
 
 
  - **DejaVu Engine:** This is used deploy decoys across your infrastrucure. So let's you have multiple offices, you would depoloy an engine in each. 
@@ -90,7 +90,7 @@ Below are few examples attack vectors using DejaVu platform you can detect:
   
 # Sneak Peek
 
-<img src="https://github.com/bhdresh/dejavu-engine/blob/harish/images/1.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu-engine/blob/harish/images/2.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu-engine/blob/harish/images/3.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu-engine/blob/harish/images/4.png" width="45%" height="250 px">
+<img src="https://github.com/bhdresh/dejavu/blob/images/1.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu/blob/images/2.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu/blob/images/3.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu/blob/images/4.png" width="45%" height="250 px">
 
 
 # Authors
