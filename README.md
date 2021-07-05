@@ -2,7 +2,7 @@
 
 We started DejaVu in 2018 and initially presented our work at [Blackhat](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework), [Defcon](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU), and [HITB](https://conference.hitb.org/hitbsecconf2018dxb/hitb-armory/). Over the last two years we have added various new decoys, breadcrumbs and changed our architecture based on the feedback from organisations using it. Latest DejaVu platform can be downloaded by using the below link:
 
-Download DejaVu here: [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download")
+Download Preconfigured DejaVu images from here: [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download")
 
 Quick Setup Guide: [Link](https://youtu.be/FhF6fT8OHjA "Link")
 
@@ -53,7 +53,7 @@ Below are few examples attack vectors using DejaVu platform you can detect:
 
 # Architecture
 
-[![Architecture](https://github.com/bhdresh/dejavu/blob/architecture.png "Architecture")](https://github.com/bhdresh/dejavu/blob/architecture.png "Architecture")
+[![Architecture](https://raw.githubusercontent.com/bhdresh/Dejavu/master/architecture.png "Architecture")](https://raw.githubusercontent.com/bhdresh/Dejavu/master/architecture.png "Architecture")
 
 
  - **DejaVu Engine:** This is used deploy decoys across your infrastrucure. So let's you have multiple offices, you would depoloy an engine in each. 
@@ -90,7 +90,7 @@ Below are few examples attack vectors using DejaVu platform you can detect:
   
 # Sneak Peek
 
-<img src="https://github.com/bhdresh/dejavu/blob/images/1.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu/blob/images/2.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu/blob/images/3.png" width="45%" height="250 px"> <img src="https://github.com/bhdresh/dejavu/blob/images/4.png" width="45%" height="250 px">
+<img src="https://raw.githubusercontent.com/bhdresh/Dejavu/master/images/1.png" width="45%" height="250 px"> <img src="https://raw.githubusercontent.com/bhdresh/Dejavu/master/images/2.png" width="45%" height="250 px"> <img src="https://raw.githubusercontent.com/bhdresh/Dejavu/master/images/3.png" width="45%" height="250 px"> <img src="https://raw.githubusercontent.com/bhdresh/Dejavu/master/images/4.png" width="45%" height="250 px">
 
 
 # Authors
