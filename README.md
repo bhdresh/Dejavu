@@ -4,10 +4,11 @@ We started DejaVu in 2018 and initially presented our work at [Blackhat](https:/
 
 Download Preconfigured DejaVu images from here: [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download") (Default credentials : administrator:changepassword)
 
+### Quick Setup Guide
 
-Quick Setup Guide (Default on Virtual Box): [Link](https://youtu.be/FhF6fT8OHjA "Link")
+Virtual Box: [Link](https://youtu.be/FhF6fT8OHjA "Link")
 
-Setup Guide for VMware ESXi : [Console](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Console_ESXI.pdf "Console") and [Engine](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Engine_ESXI.pdf "Engine")
+VMware ESXi : [Console](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Console_ESXI.pdf "Console") and [Engine](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Engine_ESXI.pdf "Engine")
 
 # DejaVU - Open Source Deception Framework
 
