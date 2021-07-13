@@ -3,6 +3,7 @@
 We started DejaVu in 2018 and initially presented our work at [Blackhat](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework), [Defcon](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU), and [HITB](https://conference.hitb.org/hitbsecconf2018dxb/hitb-armory/). Over the last two years we have added various new decoys, breadcrumbs and changed our architecture based on the feedback from organisations using it. Latest DejaVu platform can be downloaded by using the below link:
 
 Download Preconfigured DejaVu images from here: [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download")
+Default SSH credentials : administrator:changepassword
 
 Quick Setup Guide (Default on Virtual Box): [Link](https://youtu.be/FhF6fT8OHjA "Link")
 
