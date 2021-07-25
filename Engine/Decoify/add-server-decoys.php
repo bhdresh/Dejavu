@@ -26,7 +26,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
           return $event;
         }
 
-        else{
+        elsee
           while($row = $result->fetch_array()) {
 
             $event[] = $row;
@@ -251,7 +251,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     } elseif($_POST["custom-page"] == 'default-f5login'){
       $apachedecoyfile ='DEFAULTVPN.zip'; 
     } else {
-      $apachedecoyfile = $_POST["custom-page"];
+      $apachedecoyfile = escapeshellarg($_POST["custom-page"]);
     }
 
     if($_POST["custom-smbpage"] == true){
