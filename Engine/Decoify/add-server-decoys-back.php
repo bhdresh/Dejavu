@@ -24,7 +24,7 @@ include "db.php";
     $webservertype=$val["webservertype"];
     $ip_type=$val["ip_type"];
     $ipad=$val["ipad"];
-    $apachedecoyfile=$val["apachedecoyfile"];
+    $apachedecoyfile=escapeshellarg($val["apachedecoyfile"]);
     $smbdecoyfile= escapeshellarg($val["smbdecoyfile"]);
     $customssh=$val["customssh"];
     $mask=$val["mask"];
