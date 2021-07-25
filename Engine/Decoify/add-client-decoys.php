@@ -64,14 +64,20 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     $ARPMITM = 'on';
   }
 
-  if($_POST["decoy_type_val"] == 'emailclient'){
-    $imap_email = $_POST["imap_email"];
-    $imap_pass = $_POST['imap_pass'];
-    $imap_server = $_POST['imap_server'];
-    $imap_port = $_POST['imap_port'];
+  if(val_ip($_POST["imap_server"]) && val_ip($_POST["imap_port"]) {
+	  
+    if($_POST["decoy_type_val"] == 'emailclient'){
+    $imap_email = escapeshellarg($_POST["imap_email"]);
+    $imap_pass = escapeshellarg($_POST['imap_pass']);
+    $imap_server = escapeshellarg($_POST['imap_server']);
+    $imap_port = escapeshellarg($_POST['imap_port']);
 
     $EMAILCLIENT = 'on';
+    }
+	  
   }
+	  
+  
 
   if($_POST["ip_type"] == 'DHCP'){
         $ip_type = 'DHCP';
