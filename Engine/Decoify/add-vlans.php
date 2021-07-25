@@ -12,7 +12,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
   if (isset($_POST['listvlans']) && $_SESSION['csrf_token'] == $_POST['csrf_token'])
   {
   if(val_input($_POST["interface"])){
-      $interface=$_POST["interface"];
+      $interface= dataFilter($_POST["interface"]);
   }
   else{
     echo "<script>
@@ -30,7 +30,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
   {
 
   if(val_input($_POST["interface"])){
-      $interface=$_POST["interface"];
+      $interface=dataFilter($_POST["interface"]);
   }
   else{
     echo "<script>
@@ -41,7 +41,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
   }
 
   if(val_input($_POST["vlanid"])){
-      $vlanid=$_POST["vlanid"];
+      $vlanid=dataFilter($_POST["vlanid"]);
   }
   else{
     echo "<script>
