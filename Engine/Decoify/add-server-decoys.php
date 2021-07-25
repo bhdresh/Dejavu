@@ -233,7 +233,9 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     if($_POST["custom-rdp"] == 'interactiverdp'){
       $rdptype = 'RDP - Interactive';
       $rdpdecoyimage = 'pyrdp';
-      $realRDPIP = $_POST['realRDPIP'];
+      if(val_input($_POST["realRDPIP"])){
+      	$realRDPIP = $_POST['realRDPIP'];
+      }
     } else {
       $rdptype = 'RDP - Noninteractive';
       $rdpdecoyimage = 'honeyserver';
