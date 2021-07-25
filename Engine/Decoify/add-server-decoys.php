@@ -255,7 +255,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     }
 
     if($_POST["custom-smbpage"] == true){
-      $smbdecoyfile = $_POST["custom-smbpage"];
+      $smbdecoyfile = escapeshellarg($_POST["custom-smbpage"]);
     }
 
     if($_POST["decoy_type"] == 'external')
