@@ -431,16 +431,16 @@ function testEmail($test_emailaddress)
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 	//Enable SMTP debugging
-	$mail->SMTPDebug = 2;
-	$mail->SMTPAuth = false;
-	//$mail->SMTPSecure = 'ssl';
-	$mail->SMTPAutoTLS = false;
-	$mail->SMTPSecure = false;
+	$mail->SMTPDebug = 1;
+	$mail->SMTPAuth = true;
+	//$mail->SMTPSecure =PHPMailer::ENCRYPTION_SMTPS;
+	//$mail->SMTPAutoTLS = false;
+	//$mail->SMTPSecure = false;
 	$mail->Host = $hostname;
 	$mail->Port = $PortNumber; //Defaults to 443
 	$mail->IsHTML(true);
-	//$mail->Username = $username;
-	//$mail->Password = $password;
+	$mail->Username = $username;
+	$mail->Password = $password;
 	$mail->SetFrom($From_Email);
 	$mail->addReplyTo($From_Email);
 	$mail->addAddress($test_emailaddress);
