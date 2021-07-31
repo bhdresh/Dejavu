@@ -35,7 +35,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
           {
           ?>
             <p class="text-red">Previous configuration restore successful</p>
-            <p class="text-red">Reboot to apply changes. Please note the updated Management Interface : <?= $_GET["interface"];?> </p>
+            <p class="text-red">Reboot to apply changes. Please note the updated Management Interface : <?= dataFilter($_GET["interface"]);?> </p>
             <form action="updateSettings.php" method="post">
 		<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>"/>
               <input type="hidden" name="reboot" value="1">
