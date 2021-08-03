@@ -64,9 +64,8 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     $ARPMITM = 'on';
   }
 
-  if(val_ip($_POST["imap_server"]) && val_ip($_POST["imap_port"]) {
-	  
-    if($_POST["decoy_type_val"] == 'emailclient'){
+ 
+    if($_POST["decoy_type_val"] == 'emailclient') {
     $imap_email = escapeshellarg($_POST["imap_email"]);
     $imap_pass = escapeshellarg($_POST['imap_pass']);
     $imap_server = escapeshellarg($_POST['imap_server']);
@@ -75,7 +74,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     $EMAILCLIENT = 'on';
     }
 	  
-  }
+
 	  
   
 
