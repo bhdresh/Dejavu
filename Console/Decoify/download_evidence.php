@@ -13,7 +13,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
 
 	$user_id=$_SESSION['user_id'];
 	$file_dir = "/var/dejavufiles/captures/";
-	$filename=preg_replace("/[^0-9a-zA-Z\.]/","",$_GET["filename"]);
+	$filename=preg_replace("/[^0-9a-zA-Z\.]/","",basename($_GET["filename"]));
 	$file = $file_dir . $filename;
 
 	$mysqli = db_connect();

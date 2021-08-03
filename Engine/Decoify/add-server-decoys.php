@@ -26,7 +26,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
           return $event;
         }
 
-        else{
+        elsee
           while($row = $result->fetch_array()) {
 
             $event[] = $row;
@@ -233,7 +233,9 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     if($_POST["custom-rdp"] == 'interactiverdp'){
       $rdptype = 'RDP - Interactive';
       $rdpdecoyimage = 'pyrdp';
-      $realRDPIP = $_POST['realRDPIP'];
+      if(val_input($_POST["realRDPIP"])){
+      	$realRDPIP = $_POST['realRDPIP'];
+      }
     } else {
       $rdptype = 'RDP - Noninteractive';
       $rdpdecoyimage = 'honeyserver';
@@ -249,11 +251,11 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     } elseif($_POST["custom-page"] == 'default-f5login'){
       $apachedecoyfile ='DEFAULTVPN.zip'; 
     } else {
-      $apachedecoyfile = $_POST["custom-page"];
+      $apachedecoyfile = escapeshellarg($_POST["custom-page"]);
     }
 
     if($_POST["custom-smbpage"] == true){
-      $smbdecoyfile = $_POST["custom-smbpage"];
+      $smbdecoyfile = escapeshellarg($_POST["custom-smbpage"]);
     }
 
     if($_POST["decoy_type"] == 'external')

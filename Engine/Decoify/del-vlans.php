@@ -13,7 +13,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
   if (isset($_POST['delvlan']) && $_SESSION['csrf_token'] == $_POST['csrf_token'])
   {
   if(val_input($_POST["interface"])){
-      $interface=$_POST["interface"];
+      $interface=dataFilter($_POST["interface"]);
   }
   else{
     echo "<script>

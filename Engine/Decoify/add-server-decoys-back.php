@@ -24,8 +24,8 @@ include "db.php";
     $webservertype=$val["webservertype"];
     $ip_type=$val["ip_type"];
     $ipad=$val["ipad"];
-    $apachedecoyfile=$val["apachedecoyfile"];
-    $smbdecoyfile=$val["smbdecoyfile"];
+    $apachedecoyfile=escapeshellarg($val["apachedecoyfile"]);
+    $smbdecoyfile= escapeshellarg($val["smbdecoyfile"]);
     $customssh=$val["customssh"];
     $mask=$val["mask"];
     $GW=$val["GW"];
@@ -33,7 +33,9 @@ include "db.php";
     $ttl=$val["ttl"];
     $decoy_type=$val["decoy_type"];
     $customrdp=$val["customrdp"];
-    $realRDPIP=$val["realRDPIP"];
+    if(val_input($_POST["realRDPIP"])){
+      	$realRDPIP = $_POST['realRDPIP'];
+     }
 
     if($customssh == 'interactivessh'){
       $sshtype = 'SSH - Interactive';
