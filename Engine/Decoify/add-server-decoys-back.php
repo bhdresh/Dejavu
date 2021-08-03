@@ -33,8 +33,8 @@ include "db.php";
     $ttl=$val["ttl"];
     $decoy_type=$val["decoy_type"];
     $customrdp=$val["customrdp"];
-    if(val_input($_POST["realRDPIP"])){
-      	$realRDPIP = $_POST['realRDPIP'];
+    if(val_input($val["realRDPIP"])){
+      	$realRDPIP = $val['realRDPIP'];
      }
 
     if($customssh == 'interactivessh'){
