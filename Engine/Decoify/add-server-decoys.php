@@ -26,7 +26,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
           return $event;
         }
 
-        elsee
+        else{
           while($row = $result->fetch_array()) {
 
             $event[] = $row;
