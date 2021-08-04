@@ -173,20 +173,20 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
                     <input type="text" name="From_Email" class="form-control" required placeholder="Set From Email Address" value="<?=$From_Email; ?>">
                     <span class="glyphicon fa fa-laptop form-control-feedback"></span>
                 </div>
-                <!--
+               
                 <div class="form-group has-feedback" style="width: 300px">
-                    <input type="text" name="smtp_username" class="form-control" required placeholder="SMTP Username" value="">
+                    <input type="text" name="smtp_username" class="form-control" placeholder="SMTP Username" value="<?=$Username; ?>">
                     <span class="glyphicon fa fa-laptop form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" style="width: 300px">
-                    <input type="password" name="smtp_password" class="form-control" required placeholder="SMTP Password" value="">
+                    <input type="password" name="smtp_password" class="form-control" placeholder="SMTP Password" value="">
                     <span class="glyphicon fa fa-laptop form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" style="width: 300px">
-                    <input type="text" name="PortNumber" class="form-control" placeholder="SMTP PortNumber. Default Value 443" value="">
+                    <input type="text" name="PortNumber" class="form-control" placeholder="SMTP PortNumber. Default Value 443" value="<?=$PortNumber; ?>">
                     <span class="glyphicon fa fa-laptop form-control-feedback"></span>
                 </div>
-                -->
+                
               <br>
       
               <button type="submit" name="updateSMTP" value="Yes" class="btn btn-primary">Update SMTP Details</button>
