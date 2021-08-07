@@ -453,9 +453,9 @@ function testEmail($test_emailaddress)
 	$mail->addReplyTo($From_Email);
 	$mail->addAddress($test_emailaddress);
 
-	$mail->Subject = 'SMTP Test Email - Vyuha';
+	$mail->Subject = 'SMTP Test Email - Dejavu';
 	
-	$message = 'This is a Test Email for checking SMTP Details from Vyuha';
+	$message = 'This is a Test Email for checking SMTP Details from Dejavu';
 
 	$mail->msgHTML($message);
 
