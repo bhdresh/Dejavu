@@ -431,23 +431,31 @@ function testEmail($test_emailaddress)
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 	//Enable SMTP debugging
-	$mail->SMTPDebug = 2;
-	$mail->SMTPAuth = false;
-	//$mail->SMTPSecure = 'ssl';
-	$mail->SMTPAutoTLS = false;
-	$mail->SMTPSecure = false;
+	$mail->SMTPDebug = 1;
+	if(!empty($username) && !empty($password)) {
+		$mail->SMTPAuth = true;
+		$mail->Username = $username;
+		$mail->Password = $password;
+	}	
+	else {
+		$mail->SMTPAuth = false;
+		$mail->SMTPAutoTLS = false;
+		$mail->SMTPSecure = false;
+	}
+	
+	//$mail->SMTPSecure =PHPMailer::ENCRYPTION_SMTPS;
+	//$mail->SMTPAutoTLS = false;
+	//$mail->SMTPSecure = false;
 	$mail->Host = $hostname;
 	$mail->Port = $PortNumber; //Defaults to 443
 	$mail->IsHTML(true);
-	//$mail->Username = $username;
-	//$mail->Password = $password;
 	$mail->SetFrom($From_Email);
 	$mail->addReplyTo($From_Email);
 	$mail->addAddress($test_emailaddress);
 
-	$mail->Subject = 'SMTP Test Email - Vyuha';
+	$mail->Subject = 'SMTP Test Email - Dejavu';
 	
-	$message = 'This is a Test Email for checking SMTP Details from Vyuha';
+	$message = 'This is a Test Email for checking SMTP Details from Dejavu';
 
 	$mail->msgHTML($message);
 
