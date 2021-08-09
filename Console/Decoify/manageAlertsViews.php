@@ -19,6 +19,8 @@ var new_filter =`<div class="margin" id="advanceSearch">
       <option value="decoyIP">Decoy IP</option>
       <option value="attackerIP">Attacker IP</option>
       <option value="eventType">Event Type</option>
+<option value="serviceType">Service Type</option>
+
     </select>
 
     <select name="condition" id="condition">
@@ -169,7 +171,7 @@ function disbaleAlert(alertID)
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span></button>
+                      <span aria-hidden="true">Ã—</span></button>
                     <h4 class="modal-title">Create New Alert</h4>
                   </div>
                   <div class="modal-body">
@@ -272,7 +274,7 @@ function disbaleAlert(alertID)
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">×</span></button>
+                                      <span aria-hidden="true">Ã—</span></button>
                                     <h4 class="modal-title">Modify Alert</h4>
                                   </div>
                                   <div class="modal-body">
@@ -321,6 +323,8 @@ function disbaleAlert(alertID)
                                             <option value="attackerIP" <?php if ($alertCriteria['criteria'] == 'attackerIP') { echo ' selected="selected"'; } ?> >Attacker IP
                                             </option>
                                             <option value="eventType" <?php if ($alertCriteria['criteria'] == 'eventType') { echo ' selected="selected"'; } ?> >Event Type
+                                            </option>
+<option value="serviceType" <?php if ($alertCriteria['criteria'] == 'serviceType') { echo ' selected="selected"'; } ?> >Service Type
                                             </option>
                                           </select>
 
