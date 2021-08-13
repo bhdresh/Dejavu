@@ -213,7 +213,7 @@ include "db.php";
 		if ($smbdecoyfile == true)
                         {
                                 exec("sudo /usr/bin/docker inspect $decoyname\"_smbd\"| grep -i \"MergedDir\"|awk -F \"\\\"\" '{print$4}'|sed \"s/$//g\"",$outputsmb10,$resultsmb);
-                                exec("sudo /bin/sh -c \"cd $outputsmb10[0]/tmp/; unzip -o /var/dejavufiles/uploads/$smbdecoyfile\"",$outputsmb11,$resultsmb);
+                                exec("sudo /bin/sh -c \"cd $outputsmb10[0]/tmp/files/; unzip -o /var/dejavufiles/uploads/$smbdecoyfile\"",$outputsmb11,$resultsmb);
 
                         }
 
