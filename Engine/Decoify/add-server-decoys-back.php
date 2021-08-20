@@ -24,8 +24,8 @@ include "db.php";
     $webservertype=$val["webservertype"];
     $ip_type=$val["ip_type"];
     $ipad=$val["ipad"];
-    $apachedecoyfile=escapeshellarg($val["apachedecoyfile"]);
-    $smbdecoyfile= escapeshellarg($val["smbdecoyfile"]);
+    $apachedecoyfile=preg_replace("/[^0-9a-zA-Z\-\_\.]/","",$val["apachedecoyfile"]);
+    $smbdecoyfile=preg_replace("/[^0-9a-zA-Z\-\_\.]/","",$val["smbdecoyfile"]);
     $customssh=$val["customssh"];
     $mask=$val["mask"];
     $GW=$val["GW"];
@@ -213,7 +213,7 @@ include "db.php";
 		if ($smbdecoyfile == true)
                         {
                                 exec("sudo /usr/bin/docker inspect $decoyname\"_smbd\"| grep -i \"MergedDir\"|awk -F \"\\\"\" '{print$4}'|sed \"s/$//g\"",$outputsmb10,$resultsmb);
-                                exec("sudo /bin/sh -c \"cd $outputsmb10[0]/tmp/; unzip -o /var/dejavufiles/uploads/$smbdecoyfile\"",$outputsmb11,$resultsmb);
+                                exec("sudo /bin/sh -c \"cd $outputsmb10[0]/tmp/files/; unzip -o /var/dejavufiles/uploads/$smbdecoyfile\"",$outputsmb11,$resultsmb);
 
                         }
 
