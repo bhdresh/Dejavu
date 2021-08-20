@@ -251,11 +251,11 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     } elseif($_POST["custom-page"] == 'default-f5login'){
       $apachedecoyfile ='DEFAULTVPN.zip'; 
     } else {
-      $apachedecoyfile = escapeshellarg($_POST["custom-page"]);
+      $apachedecoyfile=preg_replace("/[^0-9a-zA-Z\-\_\.]/","",$_POST["custom-page"]);
     }
 
     if($_POST["custom-smbpage"] == true){
-      $smbdecoyfile = escapeshellarg($_POST["custom-smbpage"]);
+      $smbdecoyfile=preg_replace("/[^0-9a-zA-Z\-\_\.]/","",$_POST["custom-smbpage"]);
     }
 
     if($_POST["decoy_type"] == 'external')
