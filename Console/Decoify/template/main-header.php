@@ -46,7 +46,7 @@
 		$totalconnections = `netstat -ntu | grep :80 | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
 	}
 
-	$memusage = round(($memavailable/$memtotal)*100);
+	$memusage = round(($memused/$memtotal)*100);
 
 
 
@@ -154,7 +154,9 @@ background: #FFF;
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-
+<?php
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){ 
+?>
  <li class="dropdown user user-menu">
 
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -183,7 +185,7 @@ background: #FFF;
           <a href="healthcheck.php" class="dropdown-item dropdown-footer">View More</a>			
 </div>
       </li>
-
+<?php } ?>
             <li class="dropdown user user-menu <?php if(activeAlerts() > 0) 
             echo "alert-danger";
             ?>">
