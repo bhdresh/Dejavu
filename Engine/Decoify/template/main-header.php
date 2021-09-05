@@ -42,8 +42,10 @@
 		$memcached = round($mem[5] / 1000000,2);
 		$memavailable = round($mem[6] / 1000000,2);
 		// Linux Connections
-		$connections = `netstat -ntu | grep :80 | grep ESTABLISHED | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
-		$totalconnections = `netstat -ntu | grep :80 | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
+		//$connections = `netstat -ntu | grep :80 | grep ESTABLISHED | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
+		//$totalconnections = `netstat -ntu | grep :80 | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
+		$connections = (`netstat -a | grep 'ESTABLISHED' | wc -l`) - 1;
+		$totalconnections = `netstat -a | wc -l`;
 	}
 
 	$memusage = round(($memused/$memtotal)*100);
