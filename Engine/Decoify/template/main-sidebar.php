@@ -106,6 +106,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          <li><a href="manageUsers.php"><i class="fa fa-circle-o"></i> User Management</a></li>
             <li><a href="deviceSettings.php"><i class="fa fa-circle-o"></i> Device Settings</a></li>
             <li><a href="cloudSettings.php"><i class="fa fa-circle-o"></i> Connection & Logging</a></li>
             <li><a href="backupSettings.php"><i class="fa fa-circle-o"></i> Backup & Upgrade</a></li>
