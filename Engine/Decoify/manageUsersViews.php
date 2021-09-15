@@ -137,11 +137,6 @@ function disbaleUser(alertID)
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label>
-                        <input type="email" class="form-control" name="Username" id="Username" placeholder="Enter Username">
-                      </div>
-
-                      <div class="form-group">
                         <label for="exampleInputEmail1">Role</label>
                         <div class="margin" id="advanceSearch">
                         <select name="Role" id="Role">

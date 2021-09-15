@@ -12,35 +12,20 @@ function NewUser($Username, $Role, $Email, $Status,$password)
 	$hash = password_hash($password, PASSWORD_DEFAULT);
 	$mysqli = db_connect();
 
-	
 	$createdDate = date("Y-m-d H:i:s");
 
-	$sql = "INSERT INTO Users (Username, `Role`, Email, `Status`, `Timestamp`,`Password`)
-	VALUES ('$Username', '$Role', '$Email','$Status','$createdDate','$hash')";
+	$stmt = $mysqli->prepare("Insert Into Users (Username, `Role`, Email, `Status`, `Timestamp`,`Password`) VALUES (?,?,?,?,?,?)");
 
-	if ($mysqli->query($sql) === TRUE) {
-	//echo "New record created successfully";
-	} else {
-	//echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-
-	//$stmt = $mysqli->prepare("Insert Into Users (Username, Role, Email, Status, Timestamp) VALUES (?,?,?,?,?)");
-	//print_r($stmt);
-
-	//exit;
-	/*if (!$stmt) {
-		echo "SFSDFSDF";
-		exit;
+	if (!$stmt) {
     	throw new Exception('Error in preparing statement: ' . $mysqli->error);
     	exit();
 	}
 
-	$stmt->bind_param("sssss", $Username, $Role, $Email, $Status, $createdDate);
+	$stmt->bind_param("ssssss", $Username, $Role, $Email, $Status, $createdDate, $hash);
 
 	$stmt->execute();
 
-	$stmt->close();*/
-
+	$stmt->close();
 }
 
 function ModifyUser($Username, $Role, $Email, $Status, $alert_id, $pass)
