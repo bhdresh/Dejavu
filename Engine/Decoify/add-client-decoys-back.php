@@ -19,10 +19,10 @@ include "db.php";
     $mac=$val["macaddress"];
     $ttl=$val["ttl"];
     $decoy_type=$val["decoy_type"];
-    $imap_email=escapeshellarg($val["imap_email"]);
-    $imap_pass=escapeshellarg($val["imap_pass"]);
-    $imap_server=escapeshellarg($val["imap_server"]);
-    $imap_port=escapeshellarg($val["imap_port"]);
+    $imap_email=$val["imap_email"];
+    $imap_pass=$val["imap_pass"];
+    $imap_server=$val["imap_server"];
+    $imap_port=$val["imap_port"];
 
   $mysqli = db_connect();
 

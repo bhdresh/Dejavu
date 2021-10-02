@@ -68,7 +68,20 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
     if($_POST["decoy_type_val"] == 'emailclient') {
     $imap_email = escapeshellarg($_POST["imap_email"]);
     $imap_pass = escapeshellarg($_POST['imap_pass']);
-    $imap_server = escapeshellarg($_POST['imap_server']);
+
+    if(val_ip($_POST["imap_server"]))
+      {
+	$imap_server = escapeshellarg($_POST['imap_server']);
+      }
+      else{
+        echo "<script>
+        alert('Please enter valid IMAP Server IP address');
+        window.location.href='add-client-decoys.php';
+        </script>";
+        exit();
+      }
+
+
     $imap_port = escapeshellarg($_POST['imap_port']);
 
     $EMAILCLIENT = 'on';
@@ -724,11 +737,11 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
       					</div>
       					<div class="modal-body">
       						<div class="form-group">
-        						<input type="text" class="form-control" name="imap_server" placeholder="IMAP server" style="width: 200px" />
+        						<input type="text" class="form-control" name="imap_server" placeholder="IMAP server IP address" style="width: 200px" />
       						</div>
 
       						<div class="form-group">
-        						<input type="text" class="form-control" name="imap_port" placeholder="Port" style="width: 200px"  />
+        						<input type="text" class="form-control" name="imap_port" placeholder="IMAP SSL/TLS Port" style="width: 200px"  />
       						</div>
 
       						<div class="form-group">
