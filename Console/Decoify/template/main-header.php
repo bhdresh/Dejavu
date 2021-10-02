@@ -1,5 +1,17 @@
 <?php
 
+
+if(!isset($_SESSION))
+{
+	    session_start();
+}
+
+if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin') {
+	header('location:../loginView.php');
+	exit();
+}
+
+
 	$server_check_version = '1.0.4';
 	$start_time = microtime(TRUE);
 
@@ -44,8 +56,8 @@
 		// Linux Connections
 		//$connections = `netstat -ntu | grep :80 | grep ESTABLISHED | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
 		//$totalconnections = `netstat -ntu | grep :80 | grep -v LISTEN | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn | grep -v 127.0.0.1 | wc -l`; 
-		$connections = (`netstat -a | grep 'ESTABLISHED' | wc -l`) - 1;
-		$totalconnections = `netstat -a | wc -l`;
+		$connections = (`netstat -n | grep 'ESTABLISHED' | wc -l`) - 1;
+		$totalconnections = `netstat -n | wc -l`;
 	}
 
 	$memusage = round(($memused/$memtotal)*100);

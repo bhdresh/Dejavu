@@ -19,13 +19,13 @@ function SearchQuery($startDate, $endDate)
 
                 $endDate = (string)$endDate . ' 23:59:59';
 
-		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where (TimeStamp between ? and ?) and user_id=?");
+		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, msg_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where (TimeStamp between ? and ?) and user_id=?");
 
 		$stmt->bind_param("sss", $startDate, $endDate, $user_id);
 	}
 	else
 	{
-		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=?");
+		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, msg_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=?");
 		$stmt->bind_param("s", $user_id);
 	}
 	
@@ -57,7 +57,7 @@ function SearchAlert($attackerIP,$decoyIP)
 	$mysqli = db_connect();
 	$user_id=$_SESSION['user_id'];
 		
-	$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, Service_Name,pcap_filename, video_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where Attacker_IP=? and Decoy_IP=? and user_id=?");
+	$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, Service_Name,pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where Attacker_IP=? and Decoy_IP=? and user_id=?");
 
 	$stmt->bind_param("sss", $attackerIP, $decoyIP,$user_id);
 	
@@ -162,19 +162,19 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	//appending the query based on and filter
 	if ($filter == 'and')
 	{
-		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename,EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? ".$query. "ORDER BY timestamp Desc ";
+		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? ".$query. "ORDER BY timestamp Desc ";
 		if($startDate != '' and $endDate != '')
 		{
-			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename,EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? and (TimeStamp between ? and ? )".$query. "ORDER BY timestamp Desc"; 
+			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? and (TimeStamp between ? and ? )".$query. "ORDER BY timestamp Desc"; 
 		}
 		
 	}
 
 	elseif ($filter == 'or') {
-		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename,EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id = ? and (1=2".$query. ")";
+		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id = ? and (1=2".$query. ")";
 		if($startDate != '' and $endDate != '')
 		{
-			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename,EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? and (TimeStamp between ? and ? ) and (1=2".$query. ")";
+			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? and (TimeStamp between ? and ? ) and (1=2".$query. ")";
 		}
 	}
 

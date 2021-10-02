@@ -17,7 +17,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
 	$file = $file_dir . $filename;
 
 	$mysqli = db_connect();
-	$stmt = $mysqli->prepare("select * from CloudLogs where user_id=? and (pcap_filename=? or video_filename=?)");
+	$stmt = $mysqli->prepare("select * from CloudLogs where user_id=? and (pcap_filename=? or video_filename=? or msg_filename=?)");
  	$stmt->bind_param("sss", $user_id, $filename, $filename);
 	$stmt->execute();
 	$result = $stmt->get_result();

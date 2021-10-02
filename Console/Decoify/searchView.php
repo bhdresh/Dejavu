@@ -325,7 +325,13 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
                              <a href="download_evidence.php?filename=<?= dataFilter($event[$key]['video_filename'])?>">
                                 <img src="images/video.jpg" height="25px" width="25px">
                             </a>
+			  <?php }?>
+			<?php if( $event[$key]['msg_filename'] != '') {?>
+                             <a href="download_evidence.php?filename=<?= dataFilter($event[$key]['msg_filename'])?>">
+                                <img src="images/email.jpg" height="25px" width="25px">
+                            </a>
                           <?php }?>
+
                           </td>
                           <td class=""><?= dataFilter($event[$key]['Decoy_IP'])?></td>
                           <td class=""><?= dataFilter($event[$key]['Attacker_IP'])?></td>

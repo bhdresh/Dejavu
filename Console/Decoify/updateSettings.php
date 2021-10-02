@@ -45,13 +45,16 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
     
     if(isset($_POST["smtp_hostname"])){
 
-		$PortNumber == 25; //Default Value if not entered
-
         $smtp_hostname = $_POST["smtp_hostname"];
         $smtp_username = $_POST["smtp_username"];
 		$smtp_password = $_POST["smtp_password"];
 		$PortNumber = $_POST["PortNumber"];
 		$From_Email = $_POST["From_Email"];
+
+		if(empty($PortNumber))
+		{
+			$PortNumber="25";
+		}
 
         updateSMTP($smtp_hostname, $smtp_username, $smtp_password, $PortNumber, $From_Email);
 	}
@@ -380,7 +383,13 @@ function updateSMTP($smtp_hostname, $smtp_username, $smtp_password, $PortNumber,
 
 		$stmt2->close();
 
-		header('location:deviceSettings.php?smtp=success');
+		echo "<script>
+	      		alert('SMTP Details Added');
+		      window.location.href='deviceSettings.php';
+		      </script>";
+      		exit();
+
+
 		
 		exit();
 
@@ -402,7 +411,12 @@ function updateSMTP($smtp_hostname, $smtp_username, $smtp_password, $PortNumber,
 
 		$stmt2->close();
 
-		header('location:deviceSettings.php?smtp=success');
+		echo "<script>
+	      		alert('SMTP Details Updated');
+		      window.location.href='deviceSettings.php';
+		      </script>";
+      		exit();
+
 
 		exit();
 	}
@@ -415,6 +429,16 @@ function testEmail($test_emailaddress)
 	//Get SMTP details
 
 	$smtp = get_SMTPDetials();
+
+	if(empty($smtp['Hostname']))
+	{
+		echo "<script>
+	      		alert('Empty SMTP Details');
+		      window.location.href='deviceSettings.php';
+		      </script>";
+      		exit();
+
+	}
 
 	$hostname = $smtp['Hostname'];
 	$username = $smtp['Username'];

@@ -347,7 +347,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
                     <span class="glyphicon fa fa-laptop form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" style="width: 300px">
-                    <input type="text" name="PortNumber" class="form-control" placeholder="SMTP PortNumber. Default Value 443" value="<?=$PortNumber; ?>">
+                    <input type="text" name="PortNumber" class="form-control" placeholder="SMTP PortNumber. Default Value 25" value="<?=$PortNumber; ?>">
                     <span class="glyphicon fa fa-laptop form-control-feedback"></span>
                 </div>
                 

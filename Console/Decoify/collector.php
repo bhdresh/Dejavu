@@ -12,7 +12,7 @@ require 'includes/PHPMailer/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function saveLog($user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $eventType, $Timestamp, $rawlog, $serviceType, $pcap_filename, $video_filename)
+function saveLog($user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $eventType, $Timestamp, $rawlog, $serviceType, $pcap_filename, $video_filename, $msg_filename)
 {
 	$mysqli = db_connect();
 
@@ -20,14 +20,14 @@ function saveLog($user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attack
 
 	$logsavedtime = $Timestamp;
 
-	$stmt = $mysqli->prepare("Insert Into CloudLogs (user_id, auth_key, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, Service_Name,EventType, pcap_filename, video_filename, Raw_Logs, TimeStamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+	$stmt = $mysqli->prepare("Insert Into CloudLogs (user_id, auth_key, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, Service_Name,EventType, pcap_filename, video_filename, msg_filename, Raw_Logs, TimeStamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 	if (!$stmt) {
     	throw new Exception('Error in preparing statement: ' . $mysqli->error);
     	exit();
 	}
 
-	$stmt->bind_param("ssssssssssss", $user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $serviceType, $eventType, $pcap_filename, $video_filename, $rawlog, $logsavedtime);
+	$stmt->bind_param("sssssssssssss", $user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $serviceType, $eventType, $pcap_filename, $video_filename, $msg_filename, $rawlog, $logsavedtime);
 
 	$stmt->execute();
 
@@ -471,6 +471,7 @@ $serviceType=preg_replace("/[^0-9a-zA-Z\-]/","",$_POST["Service_Name"]);
 $timestamp = preg_replace("/[^0-9\-: ]/","",$_POST["Timestamp"]);
 $pcap_filename = preg_replace("/[^0-9a-zA-Z\.]/","",$_POST["pcap_filename"]);
 $video_filename = preg_replace("/[^0-9a-zA-Z\.]/","",$_POST["video_filename"]);
+$msg_filename=preg_replace("/[^0-9a-zA-Z\.]/","",$_POST["msg_filename"]);
 
 if(!empty($auth_key))
 {
@@ -489,7 +490,7 @@ if(!empty($auth_key))
 		exit();
 	}
 
-	saveLog($user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $eventType, $timestamp, $rawlog, $serviceType, $pcap_filename, $video_filename);
+	saveLog($user_id, $auth_key, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $eventType, $timestamp, $rawlog, $serviceType, $pcap_filename, $video_filename, $msg_filename);
 	AlertCompare($user_id, $decoyName, $decoyGroup, $decoyIP, $attackerIP, $eventType, $timestamp, $rawlog, $serviceType);
 
 	} 

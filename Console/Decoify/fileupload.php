@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Check if file was uploaded without errors
     if(isset($_FILES["uploaded_file"]) && $_FILES["uploaded_file"]["error"] == 0){
-	$allowed = array("pcap" => "application/octet-stream", "mp4" => "video/mp4");
+	$allowed = array("pcap" => "application/octet-stream", "mp4" => "video/mp4", "eml" => "message/rfc822");
 	$filename = preg_replace("/[^0-9a-zA-Z\.]/","",$_FILES["uploaded_file"]["name"]);
         //$filename = $_FILES["uploaded_file"]["name"];
         $filetype = $_FILES["uploaded_file"]["type"];
