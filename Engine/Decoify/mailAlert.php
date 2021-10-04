@@ -211,7 +211,7 @@ if($apiStatus == 1)
 
 if($SyslogStatus == 1)
 {
-	$syslog = $decoyName." | ".$decoyGroup." | ".$decoyIP." | ".$serviceType." | ".$decoy_type." | ".$attackerIP." | ".$eventType." | ".$logtime." | ".$pcap_filename." | ".$video_filename." | ".$msg_filename;
+	$syslog = "decoyname=".$decoyName." | decoygroup=".$decoyGroup." | decoyip=".$decoyIP." | servicetype=".$serviceType." | decoytype=".$decoy_type." | attackerip=".$attackerIP." | eventtype=".$eventType." | logtime=".$logtime." | pcapfilename=".$pcap_filename." | videofilename=".$video_filename." | msgfilename=".$msg_filename;
 	
 	$myfile = file_put_contents('/var/log/syslogclient.log', $syslog.PHP_EOL , FILE_APPEND | LOCK_EX);
 }
