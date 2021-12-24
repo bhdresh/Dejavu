@@ -1,4 +1,13 @@
-# Download 
+# DejaVU - Open Source Deception Framework
+
+DejaVu (part of Camolabs.io) is an open source deception framework which can be used to deploy decoys across the infrastructure, both on-prem and cloud. 
+
+* DejaVu Cloud - https://cloudengine.camolabs.io/
+
+* DejaVu OnPrem - This requires download, please follow the download instructions
+
+
+# DejaVu OnPrem Download 
 
 We started DejaVu in 2018 and initially presented our work at [Blackhat](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework), [Defcon](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU), and [HITB](https://conference.hitb.org/hitbsecconf2018dxb/hitb-armory/). Over the last two years we have added various new decoys, breadcrumbs and changed our architecture based on the feedback from organisations using it. Latest DejaVu platform can be downloaded by using the below link:
 
@@ -6,9 +15,9 @@ Download Preconfigured DejaVu images from here: [Camolabs.io](https://camolabs.i
 
 ### Quick Setup Guide
 
-Virtual Box: [Link](https://youtu.be/FhF6fT8OHjA "Link")
+Virtual Box (Video): [Link](https://youtu.be/FhF6fT8OHjA "Link")
 
-VMware ESXi : [Console](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Console_ESXI.pdf "Console") and [Engine](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Engine_ESXI.pdf "Engine")
+VMware ESXi (PDF): [Console](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Console_ESXI.pdf "Console") and [Engine](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Engine_ESXI.pdf "Engine")
 
 # DejaVU - Open Source Deception Framework
 
