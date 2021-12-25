@@ -1,35 +1,36 @@
-# DejaVU - Open Source Deception Framework
+# DejaVU - Open Source Deception Platform
 
-DejaVu (part of Camolabs.io) is an open source deception framework which can be used to deploy decoys across the infrastructure, both on-prem and cloud. 
+DejaVu (part of Camolabs.io) is a deception platform which can be used to deploy decoys on both cloud and on-prem. 
 
-* DejaVu Cloud - https://cloudengine.camolabs.io/
+### Deploying DejaVu on Cloud 
 
-* DejaVu OnPrem - This requires download, please follow the download instructions
+* Visit  https://cloudengine.camolabs.io/ to get started. Once you have an account,  within a few minutes you can deploy decoys on your **AWS infrastructure**
+* [Video Guide](https://youtube.com) to help you get started 
+>AMI Image used for the decoy is open-source, you can view it's working if you are curious or want to ensure there is no malicious intent. 
 
+### Deploying DejaVu on Internal Network 
 
-# DejaVu OnPrem Download 
+If you are looking deploying DejaVu on your internal network, you can download the platform from [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download"). Use the below guides to help you get started. 
 
-We started DejaVu in 2018 and initially presented our work at [Blackhat](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework), [Defcon](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU), and [HITB](https://conference.hitb.org/hitbsecconf2018dxb/hitb-armory/). Over the last two years we have added various new decoys, breadcrumbs and changed our architecture based on the feedback from organisations using it. Latest DejaVu platform can be downloaded by using the below link:
+* Setting it up on Virtual Box: [Video Guide](https://youtu.be/FhF6fT8OHjA "Link")
+* Setting it up on VMware ESXi (PDF Guides): [Console](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Console_ESXI.pdf "Console") and [Engine](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Engine_ESXI.pdf "Engine")
 
-Download Preconfigured DejaVu images from here: [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download") (Default credentials : administrator:changepassword)
+> Default credentials: administrator:changepassword
 
-### Quick Setup Guide
+# Background
 
-Virtual Box (Video): [Link](https://youtu.be/FhF6fT8OHjA "Link")
+We started DejaVu in 2018 and initially presented our work at [Blackhat](https://www.blackhat.com/us-18/arsenal.html#dejavu-an-open-source-deception-framework), [Defcon](https://www.defcon.org/html/defcon-26/dc-26-demolabs.html#DejaVU), and [HITB](https://conference.hitb.org/hitbsecconf2018dxb/hitb-armory/). Over the last few years we have added various new decoys, breadcrumbs and changed our architecture based on the feedback from organisations using it. 
 
-VMware ESXi (PDF): [Console](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Console_ESXI.pdf "Console") and [Engine](https://raw.githubusercontent.com/bhdresh/Dejavu/master/Engine_ESXI.pdf "Engine")
-
-# DejaVU - Open Source Deception Framework
-
-DejaVu is an open source deception framework which can be used to deploy decoys across the infrastructure. This could be used by the defender to deploy multiple interactive (Server and Client) decoys strategically across their network on different VLAN’s. To ease the management of decoys, we have built a web based platform which can be used to deploy, administer and configure all the decoys effectively from a centralized console. Logging and alerting dashboard displays detailed information about the alerts generated and can be further configured on how these alerts should be handled. If certain IP’s like in-house vulnerability scanner, SCCM etc. needs to be discarded, this can be configured which effectively would mean very few false positives.
+DejaVu can be used by the defender to deploy multiple interactive (Server and Client) decoys strategically across their network on different VLAN’s and on Cloud (AWS). To ease the management of decoys, we have built a web based platform which can be used to deploy, administer and configure all the decoys effectively from a centralized console. Logging and alerting dashboard displays detailed information about the alerts generated and can be further configured on how these alerts should be handled. If certain IP’s like in-house vulnerability scanner, SCCM etc. needs to be discarded, this can be configured which effectively would mean very few false positives.
 
 Alerts only occur when an adversary is engaged with the decoy, so now when the attacker touches the decoy during reconnaissance or performs authentication attempts this raises a high accuracy alert which should be investigated by the defense. Decoys can also be placed on the client VLAN’s to detect client side attacks such as responder/LLMNR attacks using client side decoys. Additionally, common attacks which the adversary uses to compromise such as abusing Tomcat/SQL server for initial foothold can be deployed as decoys, luring the attacker and enabling detection.
 
-**One of the major advantages of DejaVu is - Using a single platform you can deploys decoys across different VLANS and manage, monitor them.**
+> **One of the major advantages of DejaVu  - Using a single platform you can deploys decoys across different VLANS and manage, monitor them.**
 
 ### Use Cases
 
 Below are few examples attack vectors using DejaVu platform you can detect:
+
 
 * (Attack) : Port Scan/Enumeration
 
@@ -112,4 +113,3 @@ Below are few examples attack vectors using DejaVu platform you can detect:
 
 # Credits
 * Big shout to open source community for previous work on Honeypots
-
