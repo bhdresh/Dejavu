@@ -4,15 +4,6 @@ DejaVu (part of Camolabs.io) is a deception platform which can be used to deploy
 
 This is our presentation at [Blackhat Europe](https://www.youtube.com/watch?v=CtyTs9KbTOU) where we show how we can leverage Deception to detect common adversary tactics and techniques during various stages of attack lifecycle.   
 
-### Deploying DejaVu on AWS 
-
-* Visit  https://cloudengine.camolabs.io/ to get started. Once you have an account,  within a few minutes you can deploy decoys on your **AWS infrastructure**
-* [Video Guide](https://youtu.be/_Vz7bRBURNw) to help you get started 
-
->Note: Configure security group for AWS decoy to only allow traffic from your internal VPC's. This will elliminate noise - putting these decoys on the internet will generate a lot of traffic and defeats the purpose. 
-
->AMI Image used for the decoy is open-source, you can view it's working if you are curious or want to ensure there is no malicious intent.
-
 ### Deploying DejaVu on Internal Network 
 
 If you are looking deploying DejaVu on your internal network, you can download the platform from [Camolabs.io](https://camolabs.io/CAMOLabs/index.html "DejaVu Download"). Use the below guides to help you get started. 
