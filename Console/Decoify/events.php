@@ -311,14 +311,14 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
 
 	$user_id=$_SESSION['user_id'];
 
-	if($_POST["action"]=='disable')
+	if(isset($_POST["action"]) && $_POST["action"]=='disable')
 	{
 		$alert_id = $_POST["alert_id"];
 
 		DisableAlert($alert_id);
 	}
 
-	if($_POST["delete"]=='delete_all')
+	if(isset($_POST["delete"]) && $_POST["delete"]=='delete_all')
 	{
 		removeAlerts();
 	}
