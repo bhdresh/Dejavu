@@ -54,7 +54,7 @@
             target.addClass('active');
           }
 
-          if ( path == 'deviceSettings.php') {
+          if ( path == 'deviceSettings.php' || path == 'manageUsers.php' || path == "backupSettings.php") {
             var target = $('.settings');
             // Add active class to target link
             target.addClass('active');
@@ -62,6 +62,9 @@
 
         });
       </script>
+	  <?php 
+		$file = basename($_SERVER['SCRIPT_FILENAME']);
+	  ?>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
@@ -102,8 +105,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="deviceSettings.php"><i class="fa fa-circle-o"></i> Device Settings</a></li>
-            <li><a href="backupSettings.php"><i class="fa fa-circle-o"></i> Backup & Upgrage</a></li>
+            <li <?php echo $file==="deviceSettings.php"?"class='active'":''; ?>><a href="deviceSettings.php"><i class="fa fa-circle-o"></i> Device Settings</a></li>
+            <li <?php echo $file==="manageUsers.php"?"class='active'":''; ?>><a href="manageUsers.php"><i class="fa fa-circle-o"></i> User Management</a></li>
+            <li <?php echo $file==="backupSettings.php"?"class='active'":''; ?>><a href="backupSettings.php"><i class="fa fa-circle-o"></i> Backup & Upgrage</a></li>
           </ul>
         </li>
         
