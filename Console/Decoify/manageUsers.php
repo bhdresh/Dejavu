@@ -25,7 +25,7 @@ function NewUser($user)
 	$totp_key_timestamp = date('Y-m-d H:i:s');
 	$mail_last_sent = date('Y-m-d H:i:s');
 
-	$stmt = $mysqli->prepare("Insert Into users (Username, Role, Email, Status,totp_key, auth_key, Password, totp_key_timestamp, mail_last_sent) VALUES (?,?,?,?,?,?,?,?,?)");
+	$stmt = $mysqli->prepare("Insert Into Users (Username, Role, Email, Status,totp_key, auth_key, Password, totp_key_timestamp, mail_last_sent) VALUES (?,?,?,?,?,?,?,?,?)");
 	
 	if (!$stmt) {
     	throw new Exception('Error in preparing statement: ' . $mysqli->error);
