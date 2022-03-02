@@ -174,7 +174,7 @@ background: #FFF;
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 <?php
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){ 
+if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)){ 
 ?>
  <li class="dropdown user user-menu">
 
