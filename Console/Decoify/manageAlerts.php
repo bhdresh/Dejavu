@@ -92,6 +92,8 @@ function ViewAlert()
 
 	$result = $stmt->get_result();
 	
+	$event = [];
+	
 	if($result->num_rows === 0) {
 		
 		$stmt->close();

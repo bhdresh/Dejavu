@@ -22,13 +22,13 @@ function SearchQuery($startDate, $endDate)
 
                 $endDate = (string)$endDate . ' 23:59:59';
 
-		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, msg_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where (TimeStamp between ? and ?) and user_id=?");
+		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where (TimeStamp between ? and ?) and user_id=?");
 
 		$stmt->bind_param("sss", $startDate, $endDate, $user_id);
 	}
 	else
 	{
-		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, msg_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=?");
+		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=?");
 		$stmt->bind_param("s", $user_id);
 	}
 	
