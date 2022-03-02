@@ -16,8 +16,9 @@ if(!isset($_SESSION))
 {  
 	session_start();
 }
+require_once('includes/common.php');
 
-if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin')
+if(!isset($_SESSION['user_name']) && !isAuthorized($_SESSION))
 {
 	header('location:loginView.php');
 	exit();
@@ -31,7 +32,7 @@ if($_SESSION['csrf_token'] != $_REQUEST['csrf_token'])
 
 }
 
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
+if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
 {
 
     if(isset($_POST["oldPassword"]) && isset($_POST["newPassword"])){

@@ -1,6 +1,7 @@
 <?php
 
 //Connection to database
+require_once('includes/common.php');
 
 function db_connect() {
 
@@ -42,7 +43,7 @@ function check_session(){
   }
 
 
-  if(isset($_SESSION['user_name']) &&  $_SESSION['role'] == 'admin')
+  if(isset($_SESSION['user_name']) &&  isAuthorized($_SESSION))
   {
     $logged_in = 'true';
     return $logged_in;

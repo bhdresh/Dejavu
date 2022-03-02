@@ -4,6 +4,7 @@ if(!isset($_SESSION))
 {  
 	session_start();
 }
+require_once('includes/common.php');
 
 include 'db.php';
 
@@ -152,7 +153,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 	}
 }
 
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
+if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
 {
 	$event = ViewUser();
 }

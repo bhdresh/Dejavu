@@ -1,6 +1,8 @@
 <?php
 ini_set('memory_limit', '-1');
 
+require_once('includes/common.php');
+
 if(!isset($_SESSION)) 
 { 
     ini_set('session.cookie_samesite', 'None');
@@ -307,7 +309,7 @@ function checkSearchFilter()
 }
 
 
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
+if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)){
 
 	$user_id=$_SESSION['user_id'];
 

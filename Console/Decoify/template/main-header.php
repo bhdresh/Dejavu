@@ -5,12 +5,14 @@ if(!isset($_SESSION))
 {
 	    session_start();
 }
+require_once('includes/common.php');
 
-if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin') {
+if(!isset($_SESSION['user_name']) && !isAuthorized($_SESSION)) {
 	header('location:../loginView.php');
 	exit();
 }
 
+	$memused = $memtotal = $memusage = $cpuload = 0;
 
 	$server_check_version = '1.0.4';
 	$start_time = microtime(TRUE);
@@ -19,6 +21,7 @@ if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin') {
 
 	if ($operating_system === 'Windows') {
 		// Win CPU
+		if(extension_loaded("COM")){
 		$wmi = new COM('WinMgmts:\\\\.');
 		$cpus = $wmi->InstancesOf('Win32_Processor');
 		$cpuload = 0;
@@ -36,6 +39,7 @@ if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin') {
 		// WIN CONNECTIONS
 		$connections = shell_exec('netstat -nt | findstr :80 | findstr ESTABLISHED | find /C /V ""'); 
 		$totalconnections = shell_exec('netstat -nt | findstr :80 | find /C /V ""');
+		}
 	} else {
 		// Linux CPU
 		$load = sys_getloadavg();
@@ -60,8 +64,9 @@ if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin') {
 		$totalconnections = `netstat -n | wc -l`;
 	}
 
-	$memusage = round(($memused/$memtotal)*100);
-
+	if($memused > 0){
+		$memusage = round(($memused/$memtotal)*100);
+	}
 
 
 	$phpload = round(memory_get_usage() / 1000000,2);
