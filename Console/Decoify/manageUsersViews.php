@@ -2,7 +2,9 @@
 if (!isset($_SESSION)) {
   session_start();
 }
-if (isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
+require_once('includes/common.php');
+
+if (isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
 ?>
   <!-- Header.php. Contains header content -->
   <?php include 'template/header.php'; ?>

@@ -13,6 +13,7 @@ function NewUser($user)
 	$mysqli = db_connect();
 
 	// Get submitted data
+	$user_id = md5($user->username);
 	$username = $user->username;
 	$role = $user->role;
 	$email = $user->email;
@@ -26,17 +27,22 @@ function NewUser($user)
 	$totp_key_timestamp = date('Y-m-d H:i:s');
 	$mail_last_sent = date('Y-m-d H:i:s');
 
-	$stmt = $mysqli->prepare("Insert Into Users (Username, Role, Email, Status,totp_key, auth_key, Password, totp_key_timestamp, mail_last_sent) VALUES (?,?,?,?,?,?,?,?,?)");
+	$stmt = $mysqli->prepare("Insert Into Users (user_id, Username, Role, Email, Status,totp_key, auth_key, Password, totp_key_timestamp, mail_last_sent) VALUES (?,?,?,?,?,?,?,?,?,?)");
 	
 	if (!$stmt) {
     	throw new Exception('Error in preparing statement: ' . $mysqli->error);
 	}
 
-	$stmt->bind_param("sssisssss", $username, $role, $email, $status, $totp_key, $auth_key, $Password, $totp_key_timestamp, $mail_last_sent);
+	$stmt->bind_param("ssssisssss", $user_id, $username, $role, $email, $status, $totp_key, $auth_key, $Password, $totp_key_timestamp, $mail_last_sent);
 
 
 	$stmt->execute();
 
+	$new_key = bin2hex(openssl_random_pseudo_bytes(25));
+	$stmt = $mysqli->prepare("Update Users set auth_key=?,auth_key_timestamp=current_timestamp WHERE user_id=?");
+	$stmt->bind_param("ss", $new_key, $user_id);
+	$stmt->execute();
+	
 	$stmt->close();
 }
 
@@ -113,7 +119,7 @@ function ViewUser()
 	}
 }
 
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
+if(isset($_SESSION['user_name']) && isAdmin($_SESSION))
 {
 	if(isset($_REQUEST["action"]))
 	{
@@ -153,7 +159,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 	}
 }
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
+if(isset($_SESSION['user_name']) && isAdmin($_SESSION))
 {
 	$event = ViewUser();
 }

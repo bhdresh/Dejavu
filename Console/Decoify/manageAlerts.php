@@ -144,7 +144,7 @@ function DefaultAlert()
 }
 */
 
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
+if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
 {
 
 	if(isset($_REQUEST["action"]))

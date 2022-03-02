@@ -3,6 +3,6 @@
 		return ($user['role'] === 'admin' || $user['role'] === 'user');
 	}
 	function isAdmin($user){
-		$user['role'] === 'admin';
+		return $user['role'] === 'admin';
 	}
 ?>

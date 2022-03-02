@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once('includes/common.php');
+
 include 'db.php';
 require 'includes/PHPMailer/src/Exception.php';
 require 'includes/PHPMailer/src/PHPMailer.php';
@@ -16,7 +18,6 @@ if(!isset($_SESSION))
 {  
 	session_start();
 }
-require_once('includes/common.php');
 
 if(!isset($_SESSION['user_name']) && !isAuthorized($_SESSION))
 {
