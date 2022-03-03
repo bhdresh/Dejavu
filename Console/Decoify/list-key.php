@@ -99,7 +99,12 @@ $user_id=$_SESSION['user_id'];
                   <th>Name</th>
 		  <th>Value</th>
 		  <th>Update Date</th>		
+		  
+		  <?php if(isAdmin($_SESSION)) { ?>
 		  <th class="" style="text-align: center;">Reset key</th>
+		  <?php } ?>
+		  
+		  
                 </tr>
                 </thead>
                 <tbody>
@@ -120,8 +125,13 @@ $user_id=$_SESSION['user_id'];
                                 echo '  <td>Auth Key</td>';
 				echo '	<td>'.dataFilter($row["auth_key"]).'</td>';
 				echo '  <td>'.dataFilter($row["auth_key_timestamp"]).'</td>';
-			 	echo ' <td class="" style="text-align: center;"><span class="glyphicon glyphicon-refresh" onclick="confauthreset(this.form);"></span></td>';
+			 	
+				if(isAdmin($_SESSION)) {
+				
+				echo ' <td class="" style="text-align: center;"><span class="glyphicon glyphicon-refresh" onclick="confauthreset(this.form);"></span></td>';
 				echo '</tr>';
+				
+				}
 
                           }
                       } else {

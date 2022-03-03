@@ -9,7 +9,7 @@ require_once('includes/common.php');
 include 'db.php';
 require 'includes/vendor/autoload.php';
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
+if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
 
 $user_id=$_SESSION['user_id'];
 $remote_ip=$_SERVER["REMOTE_ADDR"];
