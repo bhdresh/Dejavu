@@ -22,14 +22,13 @@ function SearchQuery($startDate, $endDate)
 
                 $endDate = (string)$endDate . ' 23:59:59';
 
-		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where (TimeStamp between ? and ?) and user_id=?");
+		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where (TimeStamp between ? and ?) ");
 
-		$stmt->bind_param("sss", $startDate, $endDate, $user_id);
+		$stmt->bind_param("ss", $startDate, $endDate);
 	}
 	else
 	{
-		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=?");
-		$stmt->bind_param("s", $user_id);
+		$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, pcap_filename, video_filename, Service_Name, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs");
 	}
 	
 	$stmt->execute();
@@ -60,9 +59,9 @@ function SearchAlert($attackerIP,$decoyIP)
 	$mysqli = db_connect();
 	$user_id=$_SESSION['user_id'];
 		
-	$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, Service_Name,pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where Attacker_IP=? and Decoy_IP=? and user_id=?");
+	$stmt = $mysqli->prepare("SELECT Decoy_Name, Decoy_Group, Service_Name,pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where Attacker_IP=? and Decoy_IP=?");
 
-	$stmt->bind_param("sss", $attackerIP, $decoyIP,$user_id);
+	$stmt->bind_param("ss", $attackerIP, $decoyIP);
 	
 	
 	$stmt->execute();
@@ -165,19 +164,19 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	//appending the query based on and filter
 	if ($filter == 'and')
 	{
-		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? ".$query. "ORDER BY timestamp Desc ";
+		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where ".$query. "ORDER BY timestamp Desc ";
 		if($startDate != '' and $endDate != '')
 		{
-			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? and (TimeStamp between ? and ? )".$query. "ORDER BY timestamp Desc"; 
+			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where  (TimeStamp between ? and ? )".$query. "ORDER BY timestamp Desc"; 
 		}
 		
 	}
 
 	elseif ($filter == 'or') {
-		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id = ? and (1=2".$query. ")";
+		$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where  (1=2".$query. ")";
 		if($startDate != '' and $endDate != '')
 		{
-			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where user_id=? and (TimeStamp between ? and ? ) and (1=2".$query. ")";
+			$search_query = "SELECT Decoy_Name, Decoy_Group, Service_Name, pcap_filename, video_filename, msg_filename, EventType,Attacker_IP, Decoy_IP, TimeStamp FROM CloudLogs where  (TimeStamp between ? and ? ) and (1=2".$query. ")";
 		}
 	}
 
@@ -206,7 +205,7 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	{
 		$new_params = 'sss' . $query_params[0];
 
-		array_unshift($query_params, $user_id, $new_params, $startDate, $endDate);
+		array_unshift($query_params,  $new_params, $startDate, $endDate);
 
 		array_splice($query_params, 4, 1);
 	}
@@ -214,7 +213,7 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	else{
 		$new_params = 's' . $query_params[0];
 
-		array_unshift($query_params, $new_params, $user_id);
+		array_unshift($query_params, $new_params );
 
 		array_splice($query_params, 2, 1);
 
@@ -326,10 +325,8 @@ function checkSearchFilter()
 
 	$user_id=$_SESSION['user_id'];
 
-	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1 and user_id=?");
+	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1 ");
 
-	$stmt->bind_param("s", $user_id);
-	
 	$stmt->execute();
 
 	$result = $stmt->get_result();
@@ -355,9 +352,7 @@ function getSearchFilter()
 
 	$user_id=$_SESSION['user_id'];
 
-	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1 and user_id=?");
-
-	$stmt->bind_param("s", $user_id);
+	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1");
 
 	$stmt->execute();
 

@@ -251,8 +251,10 @@ function disbaleAlert(alertID)
                         <th>Description</th>
                         <th>Email Recipient</th>
                         <th>Modified Date</th>
+						<?php if(isAdmin($_SESSION)) { ?>
                         <th>Modify</th>
                         <th>Delete</th>
+						<?php } ?>
                       </tr>
                       </thead>
                       <tbody>
@@ -262,6 +264,7 @@ function disbaleAlert(alertID)
                         <td class=""><?= dataFilter($event[$key]['Alert_Desc'])?></td>
                         <td class=""><?= dataFilter($event[$key]['Email_To'])?></td>
                         <td class=""><?= dataFilter($event[$key]['Updated_Date'])?></td>
+						<?php if(isAdmin($_SESSION)) { ?>
                         <td class="" style="text-align: center;">
                         <?php $alert_info = $event[$key]['Alert_Info'];
                            $alert = json_decode($alert_info, true);
@@ -272,6 +275,7 @@ function disbaleAlert(alertID)
                           <button type="button" data-toggle="modal" data-target="#modal-default<?= $alert_id?>" >   <span class="glyphicon glyphicon-edit"></span>
                           </button>
                         </td>
+						<?php } ?>
                         <div class="modal fade in" id="modal-default<?= $alert_id?>" style="display: none;">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -356,7 +360,9 @@ function disbaleAlert(alertID)
                                       <input type="hidden" name="alert_id"" value="<?= $alert_id?>" />
                                       <input type="hidden" name="action"" value="disable" />
                         </form>
+						<?php if(isAdmin($_SESSION)) { ?>
                         <td class="" style="text-align: center;"><span class="glyphicon glyphicon-remove" onclick="disbaleAlert(<?= $alert_id?>)"></span></td>
+						<?php } ?>
                       </tr>
                       <?php endforeach;?>
                       </tbody>
