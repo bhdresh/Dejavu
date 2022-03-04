@@ -97,6 +97,8 @@
           </ul>
         </li>
 
+		<?php if(isAdmin($_SESSION)) { ?>
+
         <li class="treeview settings">
           <a href="#">
             <i class="fa fa-gear"></i> <span>Settings</span>
@@ -107,15 +109,15 @@
           <ul class="treeview-menu">
             <li <?php echo $file==="deviceSettings.php"?"class='active'":''; ?>><a href="deviceSettings.php"><i class="fa fa-circle-o"></i> Device Settings</a></li>
             
-			<?php if(isAdmin($_SESSION)) { ?>
 			
 			<li <?php echo $file==="manageUsers.php"?"class='active'":''; ?>><a href="manageUsers.php"><i class="fa fa-circle-o"></i> User Management</a></li>
 
-			<?php } ?>
+		
 			
             <li <?php echo $file==="backupSettings.php"?"class='active'":''; ?>><a href="backupSettings.php"><i class="fa fa-circle-o"></i> Backup & Upgrage</a></li>
           </ul>
         </li>
+		<?php } ?>
         
       </ul>
     </section>
