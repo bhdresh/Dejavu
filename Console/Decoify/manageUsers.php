@@ -8,6 +8,13 @@ require_once('includes/common.php');
 
 include 'db.php';
 
+if(!isset($_SESSION['user_name']) && !isAdmin($_SESSION))
+{
+        header('location:loginView.php');
+        exit();
+
+}
+
 function NewUser($user)
 {
 	$mysqli = db_connect();

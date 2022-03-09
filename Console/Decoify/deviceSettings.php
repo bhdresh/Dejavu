@@ -7,14 +7,14 @@ if(!isset($_SESSION))
 require_once('includes/common.php');
 
 include "db.php";
-if(!isset($_SESSION['user_name']) && !isAuthorized($_SESSION))
+if(!isset($_SESSION['user_name']) && !isAdmin($_SESSION))
 {
         header('location:loginView.php');
         exit();
 
 }
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
+if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
 
 ?>
 
