@@ -264,8 +264,7 @@ if (isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
                         <th>Email</th>
                         <th>Role</th>
                         <th>Status</th>
-                        <th>Modify</th>
-                        <th>Delete</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -275,13 +274,39 @@ if (isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
                           <td class=""><?php echo dataFilter($event[$key]['Email']) ?></td>
                           <td class=""><?php echo dataFilter($event[$key]['Role']) ?></td>
                           <td class=""><?php echo dataFilter($event[$key]['Status'])==="1"?"Active":"Inactive"; ?></td>
-                          <td class="" style="text-align: center;">
+                          <td class="" style="text-align: left;">
                             <?php
                             $user_info = $event[$key];
                             $user_id = $user_info['ID'];
                             ?>
-                            <button type="button" data-toggle="modal" data-target="#modal-default<?php echo $user_id; ?>"> <span class="glyphicon glyphicon-edit"></span>
+                            <button title="Edit" type="button" data-toggle="modal" data-target="#modal-default<?php echo $user_id; ?>"> <span class="glyphicon glyphicon-edit"></span>
                             </button>
+							
+							<?php						
+							if($_SESSION['user_name']!=dataFilter($event[$key]['Username'])) { ?>
+							<button type="button"> 
+                            <span title="Disable" class="glyphicon glyphicon-ban-circle" onclick="disbaleUser(<?php echo $user_id; ?>,'0')"></span>
+							 </button>
+							<?php } ?>
+                           
+							<?php						
+							if($_SESSION['user_name']!=dataFilter($event[$key]['Username'])) { ?>
+							<button type="button"> 
+                            <span title="Enable" class="glyphicon glyphicon glyphicon-ok-sign" onclick="disbaleUser(<?php echo $user_id; ?>,'1')"></span>
+                            </button>
+							<?php }
+							?>
+							<form id="disableUser<?php echo $user_id ?>" action="manageUsers.php" method="POST">
+
+                              <input type="hidden" name="user_id" value="<?php echo $user_id;?>" />
+                              <input type="hidden" name="action" value="statuschange" />
+                              <input type="hidden" id="user_status<?php echo $user_id;?>" name="user_status" value="<?php echo $user_id;?>" />
+                            </form>
+                            
+                            
+							
+							
+							
                           </td>
                           <div class="modal fade in" id="modal-default<?php echo  $user_id ?>" style="display: none;">
                             <div class="modal-dialog">
@@ -344,26 +369,6 @@ if (isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
                               </div>
                               <!-- /.modal-dialog -->
                             </div>
-
-                            <form id="disableUser<?php echo $user_id ?>" action="manageUsers.php" method="POST">
-
-                              <input type="hidden" name="user_id" value="<?php echo $user_id;?>" />
-                              <input type="hidden" name="action" value="statuschange" />
-                              <input type="hidden" id="user_status<?php echo $user_id;?>" name="user_status" value="<?php echo $user_id;?>" />
-                            </form>
-                            <td class="" style="text-align: center;">
-                            <?php						
-							if($_SESSION['user_name']!=dataFilter($event[$key]['Username'])) { ?>
-                            <span class="glyphicon glyphicon-remove" onclick="disbaleUser(<?php echo $user_id; ?>,'0')"></span>
-                          
-                            <span class="glyphicon glyphicon-ok" onclick="disbaleUser(<?php echo $user_id; ?>,'1')"></span>
-							
-							<?php } else {
-								echo "-";
-							}
-							?>
-                          
-                          </td>
                         </tr>
                       <?php endforeach; ?>
                     </tbody>

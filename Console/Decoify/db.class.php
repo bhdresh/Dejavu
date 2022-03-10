@@ -1,12 +1,18 @@
 <?php
 class DB{
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $dbname = "vyuhapro";
+    private $servername;
+    private $username;
+    private $password;
+    private $dbname;
     
     public function __construct(){
         if(!isset($this->db)){
+			$config = parse_ini_file('config/config.ini');
+			$this->servername = $config['host'];
+			$this->username = $config['username'];
+			$this->password = $config['password'];
+			$this->dbname = $config['dbname'];
+			
             // Connect to the database
             $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
             if($conn->connect_error){
@@ -63,7 +69,11 @@ class DB{
         }elseif(!array_key_exists("start", $conditions) && array_key_exists("limit", $conditions)){
             $sql .= ' LIMIT '.$conditions['limit']; 
         }
-        $result = $this->db->query($sql);
+		
+		//$result = $this->db->query($sql);
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->get_result();
         
         if(array_key_exists("return_type", $conditions) && $conditions['return_type'] != 'all'){
             switch($conditions['return_type']){
@@ -109,7 +119,10 @@ class DB{
                 $i++;
             }
             $query = "INSERT INTO ".$table." (".$columns.") VALUES (".$values.")";
-            $insert = $this->db->query($query);
+            //$insert = $this->db->query($query);
+			$insert = $this->db->prepare($query);
+			$insert->execute();
+
             return $insert?$this->db->insert_id:false;
         }else{
             return false;
@@ -145,7 +158,9 @@ class DB{
                 }
             }
             $query = "UPDATE ".$table." SET ".$colvalSet.$whereSql;
-            $update = $this->db->query($query);
+            //$update = $this->db->query($query);
+			$update = $this->db->prepare($query);
+			$update->execute();
             return $update?$this->db->affected_rows:false;
         }else{
             return false;
@@ -169,7 +184,9 @@ class DB{
             }
         }
         $query = "DELETE FROM ".$table.$whereSql;
-        $delete = $this->db->query($query);
+        //$delete = $this->db->query($query);
+		$delete = $this->db->prepare($query);
+		$delete->execute();
         return $delete?true:false;
     }
 }
