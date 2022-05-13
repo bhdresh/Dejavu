@@ -137,8 +137,6 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 
 
 
-
-
         <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Reboot/Shutdown/Reset DejaVu engine</h3>
