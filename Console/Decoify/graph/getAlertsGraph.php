@@ -8,6 +8,7 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 }
+require_once('../includes/common.php');
 
 include '../db.php';
 
@@ -24,8 +25,8 @@ function SearchQuery()
 	$mysqli = db_connect();
 	$user_id=$_SESSION['user_id'];
 		
-	$stmt = $mysqli->prepare("SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and user_id=? ORDER BY LogInsertedTimeStamp DESC;");
-	$stmt->bind_param("s", $user_id); 	
+	$stmt = $mysqli->prepare("SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 ORDER BY LogInsertedTimeStamp DESC;");
+	//$stmt->bind_param("s", $user_id); 	
 	$stmt->execute();
 	$result = $stmt->get_result();
 	
@@ -55,9 +56,9 @@ function checkSearchFilter()
 
 	$user_id=$_SESSION['user_id'];
 
-	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1 and user_id=?");
+	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1 ");
 
-	$stmt->bind_param("s", $user_id);
+	//$stmt->bind_param("s", $user_id);
 	
 	$stmt->execute();
 
@@ -84,9 +85,9 @@ function getSearchFilter()
 
 	$user_id=$_SESSION['user_id'];
 
-	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1 and user_id=?");
+	$stmt = $mysqli->prepare("SELECT search_filter from SearchFilter where Status=1");
 
-	$stmt->bind_param("s", $user_id);
+	//$stmt->bind_param("s", $user_id);
 
 	$stmt->execute();
 
@@ -180,19 +181,19 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	//appending the query based on and filter
 	if ($filter == 'and')
 	{
-		$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and user_id=? ".$query. "ORDER BY LogInsertedTimeStamp Desc ";
+		$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 ".$query. "ORDER BY LogInsertedTimeStamp Desc ";
 		if($startDate != '' and $endDate != '')
 		{
-			$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and user_id=? and (LogInsertedTimeStamp between ? and ? )".$query. "ORDER BY LogInsertedTimeStamp Desc"; 
+			$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and (LogInsertedTimeStamp between ? and ? )".$query. "ORDER BY LogInsertedTimeStamp Desc"; 
 		}
 		
 	}
 
 	elseif ($filter == 'or') {
-		$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and user_id=? and (1=2".$query. ")";
+		$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and (1=2".$query. ")";
 		if($startDate != '' and $endDate != '')
 		{
-			$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and user_id=? and (LogInsertedTimeStamp between ? and ? ) and (1=2".$query. ")";
+			$search_query = "SELECT id, Decoy_Name, Decoy_Group, Decoy_IP, Attacker_IP, LogInsertedTimeStamp FROM Alerts where Status=1 and (LogInsertedTimeStamp between ? and ? ) and (1=2".$query. ")";
 		}
 	}
 
@@ -221,7 +222,7 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	{
 		$new_params = 'sss' . $query_params[0];
 
-		array_unshift($query_params, $user_id, $new_params, $startDate, $endDate);
+		array_unshift($query_params, $new_params, $startDate, $endDate);
 
 		array_splice($query_params, 4, 1);
 	}
@@ -229,7 +230,7 @@ function AdvanceQuery($vals, $startDate, $endDate)
 	else{
 		$new_params = 's' . $query_params[0];
 
-		array_unshift($query_params, $new_params, $user_id);
+		array_unshift($query_params, $new_params);
 
 		array_splice($query_params, 2, 1);
 
@@ -277,7 +278,7 @@ function AdvanceQuery($vals, $startDate, $endDate)
 
 }
 
-if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
+if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)){
 
 	$user_id=$_SESSION['user_id'];
 
