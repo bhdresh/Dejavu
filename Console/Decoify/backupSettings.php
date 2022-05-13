@@ -85,34 +85,39 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
         </div>
         <!-- /.box-body -->
 
-          
-
+      
         <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Upgrade DejaVu Console (Current Version : 
-            <?php 
-            $config = parse_ini_file('config/config.ini'); 
-            echo $config['currentVersion'];
-            ?>
-          )
-      </h3>
+          <h3 class="box-title">Upgrade DejaVu Console</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+
+	<?php
+		$latestversion = `curl "https://camolabs.io/upgrade/upgrade.php?latestversion=check"`;
+            	$config = parse_ini_file('config/config.ini');
+		$currentversion=$config['currentVersion'];;
+
+		echo "<label>Current Version : <p style=\"color:blue\">$currentversion</p> </label>";
+		echo "<br>";
+		echo "<label>Latest Version : <p style=\"color:green\">$latestversion</p> </label>";
+	?>
+
           
             <form role="form" action="updateFramework.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>"/>
-                <div class="form-group">
-                     <input type="hidden" name="file_true" value="1">
-                     <input type="file" name="fileToUpload" id="fileToUpload">
-                </div>
-                <button type="submit" class="btn btn-primary">Upgrade DejaVu Console</button>
+                <button type="submit" class="btn btn-primary">Upgrade DejaVu Engine</button>
             </form>
           </div>
         </div>
           </div>
 
         </div>
+
+
+	    
+	    
+	    
         <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Reboot/Shutdown/Reset DejaVu Console</h3>
