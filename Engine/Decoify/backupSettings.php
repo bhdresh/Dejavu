@@ -91,7 +91,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 
           
 
-        <div class="box box-primary">
+                <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Upgrade DejaVu Engine</h3>
         </div>
@@ -99,25 +99,33 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
         <div class="box-body">
 
 	<?php
-		$latestversion = `curl "https://camolabs.io/upgrade/upgrade.php?latestversion=check"`;
+		$latestversion = `curl "https://camolabs.io/upgrade/upgrade.php?action=checklatest"`;
             	$config = parse_ini_file('config/config.ini');
-		$currentversion=$config['currentVersion'];;
+		$currentversion=$config['currentVersion'];
+		$csrf_token=$_SESSION['csrf_token'];
 
 		echo "<label>Current Version : <p style=\"color:blue\">$currentversion</p> </label>";
 		echo "<br>";
 		echo "<label>Latest Version : <p style=\"color:green\">$latestversion</p> </label>";
+
+		if ($latestversion != $currentversion) {
+         
+            		echo "<form role=\"form\" action=\"updateFramework.php\" method=\"post\" enctype=\"multipart/form-data\">";
+			echo "<input type=\"hidden\" name=\"csrf_token\" value=\"$csrf_token\"/>";
+                	echo "<button type=\"submit\" class=\"btn btn-primary\">Upgrade DejaVu Engine</button>";
+            		echo "</form>";
+
+		}
+
 	?>
 
-          
-            <form role="form" action="updateFramework.php" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>"/>
-                <button type="submit" class="btn btn-primary">Upgrade DejaVu Engine</button>
-            </form>
+
           </div>
         </div>
           </div>
 
         </div>
+
 
 
 
