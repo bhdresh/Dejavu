@@ -30,6 +30,9 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 
 		}
 		
+	} else {
+		
+		autoupgrade();
 	}
 
 	header('location:backupSettings.php');

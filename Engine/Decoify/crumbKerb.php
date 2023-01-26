@@ -8,7 +8,6 @@ if(!isset($_SESSION))
 include 'db.php';
 
 
-
 function generatePassword($length = 30) {
     $possibleChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
     $password = '';

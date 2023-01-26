@@ -4,7 +4,6 @@ if(!isset($_SESSION))
 {  
 	session_start();
 }
-require_once('includes/common.php');
 
 include 'db.php';
 
@@ -92,8 +91,6 @@ function ViewAlert()
 
 	$result = $stmt->get_result();
 	
-	$event = [];
-	
 	if($result->num_rows === 0) {
 		
 		$stmt->close();
@@ -146,7 +143,7 @@ function DefaultAlert()
 }
 */
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 {
 
 	if(isset($_REQUEST["action"]))
@@ -179,7 +176,7 @@ if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
 	}
 }
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 {
 	$event = ViewAlert();
 }

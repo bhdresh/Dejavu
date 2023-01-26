@@ -4,6 +4,7 @@ $val = getopt(null, ["interface:", "decoyname:", "decoygroup:", "SMB:", "FTP:", 
 
 include "db.php";
 
+
     $interface=$val["interface"];
     $decoyname=$val["decoyname"];
     $decoygroup=$val["decoygroup"];
@@ -866,6 +867,73 @@ include "db.php";
             // 
                     exec("sudo /usr/bin/nohup /bin/sh /etc/log.sh \"apache\" \"$outputapache9[0]\" \"$decoyname\" \"$decoygroup\" \"$ipa\" \"$decoy_type\" > /dev/null 2>&1 &",$output,$result);
                     }
+
+
+
+	if ($webservertype == 'iis')
+                    {
+                    $dockerip=trim(' ');
+
+                    if (!empty($ipa))
+                    {
+
+                            exec("sudo /usr/bin/docker run -d --name $decoyname\"_iis\" -p $ipa:80:80 -p $ipa:443:443 --memory=\"256m\" iis /usr/sbin/apache2ctl -D FOREGROUND",$outputiis2,$resultiis2);
+                            $dockeripcheck=0;
+                            while ($dockeripcheck == 0)
+                            {
+                                    global $dockeripcheck;
+                                    exec("sudo /usr/bin/docker inspect $decoyname\"_iis\" | grep -iw \"ipaddress\"|head -1|awk -F \"\\\"\" '{print$4}'",$outputiis8,$resultiis);
+                                    $dockerip=$outputiis8[0];
+                                    $dockeripcheck=preg_match('/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/',$outputiis8[0],$out);
+                            }
+                            exec("sudo /bin/ip rule add from $dockerip/32 table $new_if_count priority 11",$outputiis,$resultiis);
+                    }
+                          exec("sudo /usr/bin/docker inspect $decoyname\"_iis\"| grep -i \"LogPath\"|awk -F \"\\\"\" '{print$4}'|sed \"s/$//g\"",$outputiis9,$resultiis);
+
+                  if ($apachedecoyfile == true)
+                  {
+                    exec("sudo /usr/bin/docker inspect $decoyname\"_iis\"| grep -i \"MergedDir\"|awk -F \"\\\"\" '{print$4}'|sed \"s/$//g\"",$outputiis10,$resultiis);
+                    exec("sudo /usr/bin/docker exec $decoyname\"_iis\" rm -f /var/www/html/index.html",$outputiis12,$resultiis);
+                    exec("sudo /bin/sh -c \"cd $outputiis10[0]/var/www/html/; unzip -o /var/dejavufiles/uploads/$apachedecoyfile\"",$outputiis11,$resultiis);
+
+
+                  }
+
+
+            //
+                  $mysqli = db_connect();
+
+                  $stmt = $mysqli->prepare("UPDATE decoys set services=CONCAT(services,'IIS; '), apachedecoyfile=? where decoyname=?");
+
+                  if (!$stmt) {
+                      throw new Exception('Error in preparing statement: ' . $mysqli->error);
+                  }
+
+                  $stmt->bind_param("ss", $apachedecoyfile,$decoyname);
+
+                  $stmt->execute();
+
+                  $stmt->close();
+
+                  $stmt2 = $mysqli->prepare("INSERT into decoydetails (decoyname,decoyservicename,decoyinternalip,decoyroutetable,decoylogfile) VALUES(?,'iis',?,?,?)");
+
+                  if (!$stmt2) {
+                      throw new Exception('Error in preparing statement: ' . $mysqli->error);
+                  }
+
+                  $stmt2->bind_param("ssss", $decoyname, $dockerip, $new_if_count, $outputiis9[0]);
+
+                  $stmt2->execute();
+
+                  $stmt2->close();
+
+            //
+                    exec("sudo /usr/bin/nohup /bin/sh /etc/log.sh \"iis\" \"$outputiis9[0]\" \"$decoyname\" \"$decoygroup\" \"$ipa\" \"$decoy_type\" > /dev/null 2>&1 &",$output,$result);
+                    }
+
+
+
+
 
 
 		if ($webservertype == 'basicauth')

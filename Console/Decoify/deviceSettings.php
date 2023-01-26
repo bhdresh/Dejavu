@@ -4,17 +4,16 @@ if(!isset($_SESSION))
 { 
     session_start();
 }
-require_once('includes/common.php');
 
 include "db.php";
-if(!isset($_SESSION['user_name']) && !isAdmin($_SESSION))
+if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin')
 {
         header('location:loginView.php');
         exit();
 
 }
 
-if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 
 ?>
 

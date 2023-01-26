@@ -3,10 +3,7 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 }
-
-require_once('includes/common.php');
-
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 
 ?>
 <!-- Header.php. Contains header content -->

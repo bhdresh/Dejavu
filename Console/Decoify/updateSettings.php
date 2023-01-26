@@ -4,8 +4,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once('includes/common.php');
-
 include 'db.php';
 require 'includes/PHPMailer/src/Exception.php';
 require 'includes/PHPMailer/src/PHPMailer.php';
@@ -19,7 +17,7 @@ if(!isset($_SESSION))
 	session_start();
 }
 
-if(!isset($_SESSION['user_name']) && !isAuthorized($_SESSION))
+if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin')
 {
 	header('location:loginView.php');
 	exit();
@@ -33,7 +31,7 @@ if($_SESSION['csrf_token'] != $_REQUEST['csrf_token'])
 
 }
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 {
 
     if(isset($_POST["oldPassword"]) && isset($_POST["newPassword"])){
@@ -457,7 +455,7 @@ function testEmail($test_emailaddress)
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 	//Enable SMTP debugging
-	$mail->SMTPDebug = 1;
+	$mail->SMTPDebug = 2;
 	if(!empty($username) && !empty($password)) {
 		$mail->SMTPAuth = true;
 		$mail->Username = $username;
@@ -470,7 +468,7 @@ function testEmail($test_emailaddress)
 	}
 	
 	//$mail->SMTPSecure =PHPMailer::ENCRYPTION_SMTPS;
-	//$mail->SMTPAutoTLS = false;
+	//$mail->SMTPAutoTLS = true;
 	//$mail->SMTPSecure = false;
 	$mail->Host = $hostname;
 	$mail->Port = $PortNumber; //Defaults to 443

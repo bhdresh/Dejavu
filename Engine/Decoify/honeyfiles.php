@@ -7,7 +7,6 @@ if(!isset($_SESSION))
 
 include 'db.php';
 
-
 if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 {
   if(isset($_POST['honeyfilesdomain']) && isset($_POST['remindernote']) && $_SESSION['csrf_token'] == $_POST['csrf_token'])

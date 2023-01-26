@@ -2,20 +2,19 @@
 
 if(!isset($_SESSION)) 
 { 
-		    session_start(); 
+			    session_start(); 
 }
-require_once('includes/common.php');
 
 include "db.php";
-if(!isset($_SESSION['user_name']) && !isAdmin($_SESSION))
+if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin')
 {
-		        header('location:loginView.php');
-					        exit();
+			        header('location:loginView.php');
+									        exit();
 
 }
 
 
-if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 
 ?>
 
@@ -86,10 +85,11 @@ if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
         </div>
         <!-- /.box-body -->
 
-      
-                <div class="box box-primary">
+          
+
+	<div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Upgrade DejaVu Console</h3>
+          <h3 class="box-title">Upgrade DejaVu</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -108,7 +108,7 @@ if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
          
             		echo "<form role=\"form\" action=\"updateFramework.php\" method=\"post\" enctype=\"multipart/form-data\">";
 			echo "<input type=\"hidden\" name=\"csrf_token\" value=\"$csrf_token\"/>";
-                	echo "<button type=\"submit\" class=\"btn btn-primary\">Upgrade DejaVu Console</button>";
+                	echo "<button type=\"submit\" class=\"btn btn-primary\">Upgrade DejaVu Engine</button>";
             		echo "</form>";
 
 		}
@@ -124,9 +124,11 @@ if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
 
 
 
-	    
-	    
-	    
+
+
+
+
+
         <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Reboot/Shutdown/Reset DejaVu Console</h3>
@@ -179,6 +181,6 @@ if(isset($_SESSION['user_name']) && isAdmin($_SESSION)) {
 }
 else 
 {
-		  header('location:loginView.php');
+			  header('location:loginView.php');
 }
 ?>

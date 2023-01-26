@@ -80,6 +80,7 @@
             <li><a href="add-vlans.php"><i class="fa fa-circle-o"></i> Add Vlan</a></li>
             <li><a href="del-vlans.php"><i class="fa fa-circle-o"></i> Delete Vlan</a></li>
             <li><a href="addFiles.php"><i class="fa fa-circle-o"></i> Manage File Structure</a></li>
+	    <li><a href="addCerts.php"><i class="fa fa-circle-o"></i> Manage Certificates</a></li>
           </ul>
         </li>
 
@@ -94,7 +95,7 @@
             <li><a href="crumbDecoy.php"><i class="fa fa-circle-o"></i> Add Decoy to Domain</a></li>
             <li><a href="crumbHash.php"><i class="fa fa-circle-o"></i> Create HoneyHash</a></li>
             <li><a href="crumbKerb.php"><i class="fa fa-circle-o"></i> Kerberoast HoneyAccount</a></li>
-	          <li><a href="honeyfiles.php"><i class="fa fa-circle-o"></i> HoneyFiles</a></li> 
+            <li><a href="honeyfiles.php"><i class="fa fa-circle-o"></i> HoneyFiles</a></li> 
           </ul>
         </li>
         <li class="treeview settings">

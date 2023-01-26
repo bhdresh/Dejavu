@@ -6,6 +6,7 @@ if(!isset($_SESSION))
 }
 
 include "db.php";
+
 if(!isset($_SESSION['user_name']) && $_SESSION['role'] != 'admin')
 {
         header('location:loginView.php');
@@ -91,9 +92,9 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 
           
 
-                <div class="box box-primary">
+        <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Upgrade DejaVu Engine</h3>
+          <h3 class="box-title">Upgrade DejaVu</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">

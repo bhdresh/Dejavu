@@ -1,7 +1,6 @@
 <?php
 
 //Connection to database
-require_once('includes/common.php');
 
 function db_connect() {
 
@@ -43,7 +42,7 @@ function check_session(){
   }
 
 
-  if(isset($_SESSION['user_name']) &&  isAuthorized($_SESSION))
+  if(isset($_SESSION['user_name']) &&  $_SESSION['role'] == 'admin')
   {
     $logged_in = 'true';
     return $logged_in;
@@ -105,8 +104,8 @@ function activeAlerts()
 
     $mysqli = db_connect();
     $user_id=$_SESSION['user_id'];
-    $stmt = $mysqli->prepare("select COUNT(Status) as active_events from Alerts where Status=1;");
-    //$stmt->bind_param("s", $user_id); 
+    $stmt = $mysqli->prepare("select COUNT(Status) as active_events from Alerts where Status=1 and user_id=?;");
+    $stmt->bind_param("s", $user_id); 
     $stmt->execute();
     $result = $stmt->get_result();
 

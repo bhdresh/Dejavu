@@ -1,13 +1,11 @@
 <?php
-require_once('includes/common.php');
-
 if(!isset($_SESSION)) 
 { 
     ini_set('session.cookie_samesite', 'None');
     session_start(); 
 }
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 ?>
 <!-- Header.php. Contains header content -->
 <?php include 'template/header.php';?>
@@ -50,11 +48,9 @@ if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
        View as Graph         
       </button>
       -->
-	  <?php if(isAdmin($_SESSION)) { ?>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
                 Remove All
       </button>
-	  <?php } ?>
 
       <script>
       function removeAlerts() {
@@ -362,9 +358,7 @@ if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
                         <th>Attacker IP</th>
                         <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Timestamp: activate to sort column ascending" aria-sort="descending">Last Attack Time</th>
                         <th>Raw Logs</th>
-						<?php if(isAdmin($_SESSION)) { ?>
                         <th>Remove Seen</th>
-						<?php } ?>
                       </tr>
                       </thead>
                       <tbody>
@@ -384,9 +378,7 @@ if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)) {
                             <input type="hidden" name="action" value="disable" />
                             </form>
 
-						<?php if(isAdmin($_SESSION)) { ?>
                           <td class="" style="text-align: center;"><span class="glyphicon glyphicon-remove" onclick="disbaleAlert(<?= dataFilter($event[$key]['id'])?>)"></span></td>
-						<?php } ?>
                         </tr>
                       <?php endforeach;
                       }

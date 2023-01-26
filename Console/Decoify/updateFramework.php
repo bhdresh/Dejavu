@@ -4,11 +4,10 @@ if(!isset($_SESSION))
 {  
 	session_start();
 }
-require_once('includes/common.php');
 
 include 'db.php';
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin')
 {
 
 	if(isset($_POST['file_true']) && $_SESSION['csrf_token'] == $_POST['csrf_token'])
@@ -31,6 +30,9 @@ if(isset($_SESSION['user_name']) && isAuthorized($_SESSION))
 
 		}
 		
+	} else {
+		
+		autoupgrade();
 	}
 
 	header('location:backupSettings.php');

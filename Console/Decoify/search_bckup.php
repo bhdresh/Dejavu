@@ -7,8 +7,6 @@ if(!isset($_SESSION))
 
 error_reporting(1);
 
-require_once('includes/common.php');
-
 include 'db.php';
 
 function SearchQuery($startDate, $endDate)
@@ -374,7 +372,7 @@ function removeSearchFilter()
 }
 
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)){
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
 
 	if(isset($_GET["attackerIP"]) and isset($_GET["decoyIP"]))
 	{

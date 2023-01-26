@@ -52,8 +52,8 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
 		  <th>Interface</th>
                   <th>Services</th>
                   <th>IP Address</th>
-	 	  <th>Apache files</th>
-		  <th>SMB files</th>
+	 	  <th>Web Server Files</th>
+		  <th>SMB Files</th>
 		  <th>Action</th>
                 </tr>
                 </thead>
@@ -99,8 +99,8 @@ if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin') {
                   <th>Interface</th>
                   <th>Services</th>
                   <th>IP Address</th>
-                  <th>Apache files</th>
-                  <th>SMB files</th>
+                  <th>Web Server Files</th>
+                  <th>SMB Files</th>
 		  <th>Action</th>
                 </tr>
                 </tfoot>

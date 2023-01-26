@@ -7,6 +7,6 @@
       echo $config['currentVersion'];
       ?>
     </div>
-   <strong>Copyright &copy; 2021 <a href="https://www.camolabs.io">CamoLabs</a>.</strong> All rights 
+   <strong>Copyright &copy; 2023 <a href="https://www.camolabs.io">CamoLabs</a>.</strong> All rights 
     reserved.
   </footer>

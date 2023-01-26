@@ -4,13 +4,12 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 }
-require_once('includes/common.php');
 
 include 'db.php';
 
 $submited_csrf_token = preg_replace("/[^0-9a-zA-Z]/","",$_POST["csrf_token"]);
 
-if(isset($_SESSION['user_name']) && isAuthorized($_SESSION)){
+if(isset($_SESSION['user_name']) && $_SESSION['role'] == 'admin'){
 
 	$user_id=$_SESSION['user_id'];
 	$file_dir = "/var/dejavufiles/captures/";
